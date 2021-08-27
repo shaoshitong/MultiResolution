@@ -1,0 +1,600 @@
+Train Epoch: [0/300], emotion_loss: 0.9644, domain_loss: 1.2683, iso_loss: 0.3481, total_loss: 1.8198, Epoch0_Acc: 45.6790
+Test acc Epoch0: 36.7901
+Train Epoch: [1/300], emotion_loss: 1.0633, domain_loss: 1.1307, iso_loss: 0.3396, total_loss: 1.8553, Epoch1_Acc: 52.8219
+Test acc Epoch1: 45.9259
+Train Epoch: [2/300], emotion_loss: 0.7929, domain_loss: 0.9900, iso_loss: 0.3209, total_loss: 1.5098, Epoch2_Acc: 56.9136
+Test acc Epoch2: 46.9136
+Train Epoch: [3/300], emotion_loss: 0.9282, domain_loss: 0.8742, iso_loss: 0.2268, total_loss: 1.5047, Epoch3_Acc: 59.1358
+Test acc Epoch3: 52.0988
+Train Epoch: [4/300], emotion_loss: 0.7391, domain_loss: 0.8235, iso_loss: 0.2390, total_loss: 1.3075, Epoch4_Acc: 64.0212
+Test acc Epoch4: 43.2099
+Train Epoch: [5/300], emotion_loss: 0.8102, domain_loss: 0.9690, iso_loss: 0.3701, total_loss: 1.5678, Epoch5_Acc: 65.4497
+Test acc Epoch5: 38.2716
+Train Epoch: [6/300], emotion_loss: 0.8007, domain_loss: 0.8060, iso_loss: 0.2600, total_loss: 1.3831, Epoch6_Acc: 67.1076
+Test acc Epoch6: 34.8148
+Train Epoch: [7/300], emotion_loss: 0.7510, domain_loss: 0.5839, iso_loss: 0.1455, total_loss: 1.1301, Epoch7_Acc: 69.8942
+Test acc Epoch7: 49.6296
+Train Epoch: [8/300], emotion_loss: 0.5844, domain_loss: 0.6327, iso_loss: 0.2072, total_loss: 1.0446, Epoch8_Acc: 71.8166
+Test acc Epoch8: 48.1481
+Train Epoch: [9/300], emotion_loss: 0.4722, domain_loss: 0.7129, iso_loss: 0.2983, total_loss: 1.0557, Epoch9_Acc: 73.8977
+Test acc Epoch9: 50.8642
+Train Epoch: [10/300], emotion_loss: 0.5238, domain_loss: 0.6126, iso_loss: 0.2903, total_loss: 1.0592, Epoch10_Acc: 76.8078
+Test acc Epoch10: 48.1481
+Train Epoch: [11/300], emotion_loss: 0.4890, domain_loss: 1.2649, iso_loss: 0.8994, total_loss: 1.8943, Epoch11_Acc: 77.5485
+Test acc Epoch11: 54.3210
+Train Epoch: [12/300], emotion_loss: 0.4338, domain_loss: 0.6677, iso_loss: 0.2727, total_loss: 0.9736, Epoch12_Acc: 78.4127
+Test acc Epoch12: 47.4074
+Train Epoch: [13/300], emotion_loss: 0.3949, domain_loss: 0.6253, iso_loss: 0.3794, total_loss: 1.0244, Epoch13_Acc: 77.3721
+Test acc Epoch13: 52.8395
+Train Epoch: [14/300], emotion_loss: 0.4807, domain_loss: 0.4807, iso_loss: 0.2688, total_loss: 0.9418, Epoch14_Acc: 82.9630
+Test acc Epoch14: 55.5556
+Train Epoch: [15/300], emotion_loss: 0.3403, domain_loss: 0.3817, iso_loss: 0.2341, total_loss: 0.7271, Epoch15_Acc: 84.4621
+Test acc Epoch15: 54.8148
+Train Epoch: [16/300], emotion_loss: 0.2782, domain_loss: 0.4090, iso_loss: 0.3379, total_loss: 0.7797, Epoch16_Acc: 85.0794
+Test acc Epoch16: 57.7778
+Train Epoch: [17/300], emotion_loss: 0.3910, domain_loss: 0.4981, iso_loss: 0.4384, total_loss: 1.0286, Epoch17_Acc: 87.6190
+Test acc Epoch17: 59.2593
+Train Epoch: [18/300], emotion_loss: 0.3758, domain_loss: 0.4248, iso_loss: 0.3275, total_loss: 0.8732, Epoch18_Acc: 87.0194
+Test acc Epoch18: 54.0741
+Train Epoch: [19/300], emotion_loss: 0.3079, domain_loss: 0.3079, iso_loss: 0.3530, total_loss: 0.7840, Epoch19_Acc: 89.0829
+Test acc Epoch19: 57.7778
+Train Epoch: [20/300], emotion_loss: 0.3136, domain_loss: 0.3001, iso_loss: 0.3327, total_loss: 0.7664, Epoch20_Acc: 89.0476
+Test acc Epoch20: 55.0617
+Train Epoch: [21/300], emotion_loss: 0.1663, domain_loss: 0.1603, iso_loss: 0.1304, total_loss: 0.3608, Epoch21_Acc: 90.8642
+Test acc Epoch21: 56.0494
+Train Epoch: [22/300], emotion_loss: 0.0119, domain_loss: 0.0939, iso_loss: 0.2298, total_loss: 0.2980, Epoch22_Acc: 94.3739
+Test acc Epoch22: 53.3333
+Train Epoch: [23/300], emotion_loss: 0.0107, domain_loss: 0.0597, iso_loss: 0.1275, total_loss: 0.1740, Epoch23_Acc: 94.9030
+Test acc Epoch23: 54.3210
+Train Epoch: [24/300], emotion_loss: 0.0138, domain_loss: 0.0501, iso_loss: 0.1458, total_loss: 0.1896, Epoch24_Acc: 95.0441
+Test acc Epoch24: 52.8395
+Train Epoch: [25/300], emotion_loss: 0.0193, domain_loss: 0.0517, iso_loss: 0.0706, total_loss: 0.1209, Epoch25_Acc: 94.9030
+Test acc Epoch25: 52.8395
+Train Epoch: [26/300], emotion_loss: 0.0118, domain_loss: 0.0429, iso_loss: 0.0709, total_loss: 0.1085, Epoch26_Acc: 94.8501
+Test acc Epoch26: 55.0617
+Train Epoch: [27/300], emotion_loss: 0.0160, domain_loss: 0.0903, iso_loss: 0.1553, total_loss: 0.2255, Epoch27_Acc: 94.8501
+Test acc Epoch27: 53.8272
+Train Epoch: [28/300], emotion_loss: 0.0035, domain_loss: 0.0439, iso_loss: 0.0791, total_loss: 0.1090, Epoch28_Acc: 94.8325
+Test acc Epoch28: 55.5556
+Train Epoch: [29/300], emotion_loss: 0.0237, domain_loss: 0.0426, iso_loss: 0.0845, total_loss: 0.1338, Epoch29_Acc: 94.6914
+Test acc Epoch29: 56.0494
+Train Epoch: [30/300], emotion_loss: 0.0039, domain_loss: 0.0279, iso_loss: 0.0661, total_loss: 0.0868, Epoch30_Acc: 94.6384
+Test acc Epoch30: 54.5679
+Train Epoch: [31/300], emotion_loss: 0.0112, domain_loss: 0.0258, iso_loss: 0.0603, total_loss: 0.0869, Epoch31_Acc: 94.4797
+Test acc Epoch31: 55.8025
+Train Epoch: [32/300], emotion_loss: 0.0036, domain_loss: 0.0149, iso_loss: 0.0541, total_loss: 0.0666, Epoch32_Acc: 94.6208
+Test acc Epoch32: 56.5432
+Train Epoch: [33/300], emotion_loss: 0.0125, domain_loss: 0.0293, iso_loss: 0.0485, total_loss: 0.0786, Epoch33_Acc: 94.5150
+Test acc Epoch33: 55.3086
+Train Epoch: [34/300], emotion_loss: 0.0045, domain_loss: 0.0198, iso_loss: 0.0442, total_loss: 0.0606, Epoch34_Acc: 94.6384
+Test acc Epoch34: 56.2963
+Train Epoch: [35/300], emotion_loss: 0.0039, domain_loss: 0.0141, iso_loss: 0.0451, total_loss: 0.0575, Epoch35_Acc: 94.6384
+Test acc Epoch35: 57.2840
+Train Epoch: [36/300], emotion_loss: 0.0087, domain_loss: 0.0241, iso_loss: 0.0489, total_loss: 0.0720, Epoch36_Acc: 94.4974
+Test acc Epoch36: 56.0494
+Train Epoch: [37/300], emotion_loss: 0.0063, domain_loss: 0.0217, iso_loss: 0.0339, total_loss: 0.0532, Epoch37_Acc: 94.6208
+Test acc Epoch37: 57.0370
+Train Epoch: [38/300], emotion_loss: 0.0041, domain_loss: 0.0121, iso_loss: 0.0420, total_loss: 0.0534, Epoch38_Acc: 94.4621
+Test acc Epoch38: 57.0370
+Train Epoch: [39/300], emotion_loss: 0.0075, domain_loss: 0.0339, iso_loss: 0.0542, total_loss: 0.0820, Epoch39_Acc: 94.3739
+Test acc Epoch39: 57.5309
+Train Epoch: [40/300], emotion_loss: 0.0152, domain_loss: 0.0183, iso_loss: 0.0376, total_loss: 0.0638, Epoch40_Acc: 94.3915
+Test acc Epoch40: 56.7901
+Train Epoch: [41/300], emotion_loss: 0.0059, domain_loss: 0.0241, iso_loss: 0.0170, total_loss: 0.0374, Epoch41_Acc: 94.2152
+Test acc Epoch41: 57.7778
+Train Epoch: [42/300], emotion_loss: 0.0041, domain_loss: 0.0356, iso_loss: 0.0932, total_loss: 0.1186, Epoch42_Acc: 94.3386
+Test acc Epoch42: 57.5309
+Train Epoch: [43/300], emotion_loss: 0.0041, domain_loss: 0.0318, iso_loss: 0.0754, total_loss: 0.0986, Epoch43_Acc: 94.2504
+Test acc Epoch43: 57.2840
+Train Epoch: [44/300], emotion_loss: 0.0022, domain_loss: 0.0197, iso_loss: 0.0676, total_loss: 0.0816, Epoch44_Acc: 94.3386
+Test acc Epoch44: 56.7901
+Train Epoch: [45/300], emotion_loss: 0.0034, domain_loss: 0.0240, iso_loss: 0.0884, total_loss: 0.1061, Epoch45_Acc: 94.0741
+Test acc Epoch45: 56.7901
+Train Epoch: [46/300], emotion_loss: 0.0023, domain_loss: 0.0150, iso_loss: 0.0471, total_loss: 0.0584, Epoch46_Acc: 94.1270
+Test acc Epoch46: 56.7901
+Train Epoch: [47/300], emotion_loss: 0.0079, domain_loss: 0.0145, iso_loss: 0.0283, total_loss: 0.0448, Epoch47_Acc: 94.1799
+Test acc Epoch47: 56.5432
+Train Epoch: [48/300], emotion_loss: 0.0013, domain_loss: 0.0110, iso_loss: 0.0398, total_loss: 0.0477, Epoch48_Acc: 94.0917
+Test acc Epoch48: 56.2963
+Train Epoch: [49/300], emotion_loss: 0.0100, domain_loss: 0.0235, iso_loss: 0.0513, total_loss: 0.0754, Epoch49_Acc: 93.9859
+Test acc Epoch49: 57.0370
+Train Epoch: [50/300], emotion_loss: 0.0076, domain_loss: 0.0111, iso_loss: 0.0181, total_loss: 0.0323, Epoch50_Acc: 94.1623
+Test acc Epoch50: 57.0370
+Train Epoch: [51/300], emotion_loss: 0.0014, domain_loss: 0.0115, iso_loss: 0.0343, total_loss: 0.0426, Epoch51_Acc: 93.9859
+Test acc Epoch51: 57.2840
+Train Epoch: [52/300], emotion_loss: 0.0082, domain_loss: 0.0210, iso_loss: 0.0390, total_loss: 0.0598, Epoch52_Acc: 94.0564
+Test acc Epoch52: 56.2963
+Train Epoch: [53/300], emotion_loss: 0.0044, domain_loss: 0.0226, iso_loss: 0.0311, total_loss: 0.0490, Epoch53_Acc: 94.0212
+Test acc Epoch53: 56.7901
+Train Epoch: [54/300], emotion_loss: 0.0022, domain_loss: 0.0150, iso_loss: 0.0314, total_loss: 0.0425, Epoch54_Acc: 93.9506
+Test acc Epoch54: 57.2840
+Train Epoch: [55/300], emotion_loss: 0.0011, domain_loss: 0.0170, iso_loss: 0.0787, total_loss: 0.0900, Epoch55_Acc: 93.9859
+Test acc Epoch55: 57.5309
+Train Epoch: [56/300], emotion_loss: 0.0096, domain_loss: 0.0083, iso_loss: 0.0225, total_loss: 0.0371, Epoch56_Acc: 94.0035
+Test acc Epoch56: 56.5432
+Train Epoch: [57/300], emotion_loss: 0.0055, domain_loss: 0.0117, iso_loss: 0.0331, total_loss: 0.0456, Epoch57_Acc: 93.8624
+Test acc Epoch57: 56.5432
+Train Epoch: [58/300], emotion_loss: 0.0021, domain_loss: 0.0078, iso_loss: 0.0230, total_loss: 0.0298, Epoch58_Acc: 93.9859
+Test acc Epoch58: 57.0370
+Train Epoch: [59/300], emotion_loss: 0.0070, domain_loss: 0.0182, iso_loss: 0.0134, total_loss: 0.0313, Epoch59_Acc: 94.0212
+Test acc Epoch59: 56.5432
+Train Epoch: [60/300], emotion_loss: 0.0044, domain_loss: 0.0102, iso_loss: 0.0292, total_loss: 0.0397, Epoch60_Acc: 93.9506
+Test acc Epoch60: 57.2840
+Train Epoch: [61/300], emotion_loss: 0.0087, domain_loss: 0.0167, iso_loss: 0.0127, total_loss: 0.0315, Epoch61_Acc: 94.1270
+Test acc Epoch61: 56.5432
+Train Epoch: [62/300], emotion_loss: 0.0053, domain_loss: 0.0143, iso_loss: 0.0290, total_loss: 0.0429, Epoch62_Acc: 94.0035
+Test acc Epoch62: 56.5432
+Train Epoch: [63/300], emotion_loss: 0.0040, domain_loss: 0.0204, iso_loss: 0.0253, total_loss: 0.0415, Epoch63_Acc: 93.9683
+Test acc Epoch63: 56.5432
+Train Epoch: [64/300], emotion_loss: 0.0016, domain_loss: 0.0098, iso_loss: 0.0285, total_loss: 0.0360, Epoch64_Acc: 93.9330
+Test acc Epoch64: 56.5432
+Train Epoch: [65/300], emotion_loss: 0.0039, domain_loss: 0.0126, iso_loss: 0.0354, total_loss: 0.0468, Epoch65_Acc: 93.9506
+Test acc Epoch65: 55.5556
+Train Epoch: [66/300], emotion_loss: 0.0036, domain_loss: 0.0100, iso_loss: 0.0177, total_loss: 0.0274, Epoch66_Acc: 93.8977
+Test acc Epoch66: 55.5556
+Train Epoch: [67/300], emotion_loss: 0.0057, domain_loss: 0.0134, iso_loss: 0.0212, total_loss: 0.0350, Epoch67_Acc: 93.8977
+Test acc Epoch67: 56.0494
+Train Epoch: [68/300], emotion_loss: 0.0034, domain_loss: 0.0154, iso_loss: 0.0326, total_loss: 0.0452, Epoch68_Acc: 94.0917
+Test acc Epoch68: 56.0494
+Train Epoch: [69/300], emotion_loss: 0.0034, domain_loss: 0.0139, iso_loss: 0.0403, total_loss: 0.0520, Epoch69_Acc: 93.8448
+Test acc Epoch69: 56.2963
+Train Epoch: [70/300], emotion_loss: 0.0020, domain_loss: 0.0086, iso_loss: 0.0252, total_loss: 0.0323, Epoch70_Acc: 93.9859
+Test acc Epoch70: 54.8148
+Train Epoch: [71/300], emotion_loss: 0.0012, domain_loss: 0.0063, iso_loss: 0.0230, total_loss: 0.0280, Epoch71_Acc: 93.9859
+Test acc Epoch71: 55.8025
+Train Epoch: [72/300], emotion_loss: 0.0021, domain_loss: 0.0090, iso_loss: 0.0172, total_loss: 0.0247, Epoch72_Acc: 93.9859
+Test acc Epoch72: 55.5556
+Train Epoch: [73/300], emotion_loss: 0.0013, domain_loss: 0.0140, iso_loss: 0.0462, total_loss: 0.0559, Epoch73_Acc: 94.0035
+Test acc Epoch73: 55.8025
+Train Epoch: [74/300], emotion_loss: 0.0020, domain_loss: 0.0108, iso_loss: 0.0542, total_loss: 0.0627, Epoch74_Acc: 93.9506
+Test acc Epoch74: 55.8025
+Train Epoch: [75/300], emotion_loss: 0.0018, domain_loss: 0.0064, iso_loss: 0.0141, total_loss: 0.0198, Epoch75_Acc: 93.9153
+Test acc Epoch75: 55.8025
+Train Epoch: [76/300], emotion_loss: 0.0031, domain_loss: 0.0098, iso_loss: 0.0228, total_loss: 0.0318, Epoch76_Acc: 94.0035
+Test acc Epoch76: 55.5556
+Train Epoch: [77/300], emotion_loss: 0.0018, domain_loss: 0.0103, iso_loss: 0.0290, total_loss: 0.0371, Epoch77_Acc: 93.8624
+Test acc Epoch77: 55.8025
+Train Epoch: [78/300], emotion_loss: 0.0019, domain_loss: 0.0068, iso_loss: 0.0269, total_loss: 0.0329, Epoch78_Acc: 93.8801
+Test acc Epoch78: 55.3086
+Train Epoch: [79/300], emotion_loss: 0.0016, domain_loss: 0.0115, iso_loss: 0.0648, total_loss: 0.0733, Epoch79_Acc: 93.9153
+Test acc Epoch79: 54.8148
+Train Epoch: [80/300], emotion_loss: 0.0020, domain_loss: 0.0118, iso_loss: 0.0259, total_loss: 0.0350, Epoch80_Acc: 94.0741
+Test acc Epoch80: 55.0617
+Train Epoch: [81/300], emotion_loss: 0.0023, domain_loss: 0.0090, iso_loss: 0.0262, total_loss: 0.0339, Epoch81_Acc: 94.0388
+Test acc Epoch81: 55.3086
+Train Epoch: [82/300], emotion_loss: 0.0031, domain_loss: 0.0063, iso_loss: 0.0156, total_loss: 0.0225, Epoch82_Acc: 93.9683
+Test acc Epoch82: 55.3086
+Train Epoch: [83/300], emotion_loss: 0.0015, domain_loss: 0.0059, iso_loss: 0.0313, total_loss: 0.0363, Epoch83_Acc: 93.8448
+Test acc Epoch83: 55.8025
+Train Epoch: [84/300], emotion_loss: 0.0025, domain_loss: 0.0031, iso_loss: 0.0131, total_loss: 0.0175, Epoch84_Acc: 94.0388
+Test acc Epoch84: 56.0494
+Train Epoch: [85/300], emotion_loss: 0.0023, domain_loss: 0.0055, iso_loss: 0.0110, total_loss: 0.0166, Epoch85_Acc: 93.9153
+Test acc Epoch85: 56.0494
+Train Epoch: [86/300], emotion_loss: 0.0038, domain_loss: 0.0074, iso_loss: 0.0181, total_loss: 0.0263, Epoch86_Acc: 94.0564
+Test acc Epoch86: 55.8025
+Train Epoch: [87/300], emotion_loss: 0.0014, domain_loss: 0.0064, iso_loss: 0.0286, total_loss: 0.0338, Epoch87_Acc: 93.9330
+Test acc Epoch87: 55.8025
+Train Epoch: [88/300], emotion_loss: 0.0023, domain_loss: 0.0074, iso_loss: 0.0196, total_loss: 0.0263, Epoch88_Acc: 94.0035
+Test acc Epoch88: 54.8148
+Train Epoch: [89/300], emotion_loss: 0.0011, domain_loss: 0.0086, iso_loss: 0.0425, total_loss: 0.0488, Epoch89_Acc: 94.0212
+Test acc Epoch89: 54.8148
+Train Epoch: [90/300], emotion_loss: 0.0022, domain_loss: 0.0095, iso_loss: 0.0271, total_loss: 0.0350, Epoch90_Acc: 94.0035
+Test acc Epoch90: 55.8025
+Train Epoch: [91/300], emotion_loss: 0.0060, domain_loss: 0.0054, iso_loss: 0.0168, total_loss: 0.0260, Epoch91_Acc: 94.0388
+Test acc Epoch91: 55.0617
+Train Epoch: [92/300], emotion_loss: 0.0010, domain_loss: 0.0067, iso_loss: 0.0288, total_loss: 0.0339, Epoch92_Acc: 93.9330
+Test acc Epoch92: 54.8148
+Train Epoch: [93/300], emotion_loss: 0.0024, domain_loss: 0.0074, iso_loss: 0.0114, total_loss: 0.0182, Epoch93_Acc: 93.9506
+Test acc Epoch93: 54.8148
+Train Epoch: [94/300], emotion_loss: 0.0019, domain_loss: 0.0048, iso_loss: 0.0099, total_loss: 0.0147, Epoch94_Acc: 93.9153
+Test acc Epoch94: 54.8148
+Train Epoch: [95/300], emotion_loss: 0.0019, domain_loss: 0.0048, iso_loss: 0.0153, total_loss: 0.0201, Epoch95_Acc: 94.0035
+Test acc Epoch95: 54.8148
+Train Epoch: [96/300], emotion_loss: 0.0010, domain_loss: 0.0066, iso_loss: 0.0302, total_loss: 0.0352, Epoch96_Acc: 93.8624
+Test acc Epoch96: 55.0617
+Train Epoch: [97/300], emotion_loss: 0.0005, domain_loss: 0.0047, iso_loss: 0.0402, total_loss: 0.0434, Epoch97_Acc: 93.9330
+Test acc Epoch97: 55.3086
+Train Epoch: [98/300], emotion_loss: 0.0036, domain_loss: 0.0085, iso_loss: 0.0160, total_loss: 0.0247, Epoch98_Acc: 93.8095
+Test acc Epoch98: 54.5679
+Train Epoch: [99/300], emotion_loss: 0.0035, domain_loss: 0.0070, iso_loss: 0.0154, total_loss: 0.0230, Epoch99_Acc: 93.8977
+Test acc Epoch99: 54.8148
+Train Epoch: [100/300], emotion_loss: 0.0028, domain_loss: 0.0108, iso_loss: 0.0244, total_loss: 0.0337, Epoch100_Acc: 93.7566
+Test acc Epoch100: 54.0741
+Train Epoch: [101/300], emotion_loss: 0.0025, domain_loss: 0.0034, iso_loss: 0.0162, total_loss: 0.0207, Epoch101_Acc: 93.8272
+Test acc Epoch101: 54.5679
+Train Epoch: [102/300], emotion_loss: 0.0020, domain_loss: 0.0084, iso_loss: 0.0277, total_loss: 0.0347, Epoch102_Acc: 93.8095
+Test acc Epoch102: 54.3210
+Train Epoch: [103/300], emotion_loss: 0.0032, domain_loss: 0.0080, iso_loss: 0.0146, total_loss: 0.0227, Epoch103_Acc: 93.8095
+Test acc Epoch103: 53.8272
+Train Epoch: [104/300], emotion_loss: 0.0024, domain_loss: 0.0053, iso_loss: 0.0133, total_loss: 0.0189, Epoch104_Acc: 93.8095
+Test acc Epoch104: 54.5679
+Train Epoch: [105/300], emotion_loss: 0.0020, domain_loss: 0.0116, iso_loss: 0.0267, total_loss: 0.0356, Epoch105_Acc: 93.8448
+Test acc Epoch105: 54.5679
+Train Epoch: [106/300], emotion_loss: 0.0015, domain_loss: 0.0080, iso_loss: 0.0275, total_loss: 0.0339, Epoch106_Acc: 93.8448
+Test acc Epoch106: 55.0617
+Train Epoch: [107/300], emotion_loss: 0.0009, domain_loss: 0.0059, iso_loss: 0.0121, total_loss: 0.0165, Epoch107_Acc: 93.8448
+Test acc Epoch107: 55.3086
+Train Epoch: [108/300], emotion_loss: 0.0032, domain_loss: 0.0034, iso_loss: 0.0093, total_loss: 0.0146, Epoch108_Acc: 93.7919
+Test acc Epoch108: 54.0741
+Train Epoch: [109/300], emotion_loss: 0.0015, domain_loss: 0.0080, iso_loss: 0.0137, total_loss: 0.0200, Epoch109_Acc: 93.8095
+Test acc Epoch109: 54.8148
+Train Epoch: [110/300], emotion_loss: 0.0005, domain_loss: 0.0063, iso_loss: 0.0379, total_loss: 0.0422, Epoch110_Acc: 93.8095
+Test acc Epoch110: 53.5802
+Train Epoch: [111/300], emotion_loss: 0.0015, domain_loss: 0.0081, iso_loss: 0.0266, total_loss: 0.0329, Epoch111_Acc: 93.8095
+Test acc Epoch111: 54.0741
+Train Epoch: [112/300], emotion_loss: 0.0012, domain_loss: 0.0096, iso_loss: 0.0365, total_loss: 0.0435, Epoch112_Acc: 93.8801
+Test acc Epoch112: 54.3210
+Train Epoch: [113/300], emotion_loss: 0.0005, domain_loss: 0.0055, iso_loss: 0.0221, total_loss: 0.0259, Epoch113_Acc: 93.9330
+Test acc Epoch113: 54.3210
+Train Epoch: [114/300], emotion_loss: 0.0010, domain_loss: 0.0060, iso_loss: 0.0221, total_loss: 0.0266, Epoch114_Acc: 93.9153
+Test acc Epoch114: 54.3210
+Train Epoch: [115/300], emotion_loss: 0.0007, domain_loss: 0.0090, iso_loss: 0.0537, total_loss: 0.0599, Epoch115_Acc: 93.8977
+Test acc Epoch115: 54.3210
+Train Epoch: [116/300], emotion_loss: 0.0026, domain_loss: 0.0130, iso_loss: 0.0523, total_loss: 0.0628, Epoch116_Acc: 93.8095
+Test acc Epoch116: 54.3210
+Train Epoch: [117/300], emotion_loss: 0.0018, domain_loss: 0.0112, iso_loss: 0.0217, total_loss: 0.0301, Epoch117_Acc: 93.8095
+Test acc Epoch117: 54.3210
+Train Epoch: [118/300], emotion_loss: 0.0034, domain_loss: 0.0079, iso_loss: 0.0258, total_loss: 0.0339, Epoch118_Acc: 93.7743
+Test acc Epoch118: 54.0741
+Train Epoch: [119/300], emotion_loss: 0.0016, domain_loss: 0.0069, iso_loss: 0.0195, total_loss: 0.0252, Epoch119_Acc: 93.7390
+Test acc Epoch119: 54.0741
+Train Epoch: [120/300], emotion_loss: 0.0016, domain_loss: 0.0062, iso_loss: 0.0276, total_loss: 0.0329, Epoch120_Acc: 93.7743
+Test acc Epoch120: 53.8272
+Train Epoch: [121/300], emotion_loss: 0.0008, domain_loss: 0.0059, iso_loss: 0.0330, total_loss: 0.0372, Epoch121_Acc: 93.7390
+Test acc Epoch121: 53.8272
+Train Epoch: [122/300], emotion_loss: 0.0017, domain_loss: 0.0031, iso_loss: 0.0167, total_loss: 0.0202, Epoch122_Acc: 93.7213
+Test acc Epoch122: 53.8272
+Train Epoch: [123/300], emotion_loss: 0.0019, domain_loss: 0.0090, iso_loss: 0.0149, total_loss: 0.0222, Epoch123_Acc: 93.6684
+Test acc Epoch123: 54.3210
+Train Epoch: [124/300], emotion_loss: 0.0029, domain_loss: 0.0089, iso_loss: 0.0146, total_loss: 0.0229, Epoch124_Acc: 93.7213
+Test acc Epoch124: 53.8272
+Train Epoch: [125/300], emotion_loss: 0.0004, domain_loss: 0.0054, iso_loss: 0.0270, total_loss: 0.0307, Epoch125_Acc: 93.7390
+Test acc Epoch125: 54.5679
+Train Epoch: [126/300], emotion_loss: 0.0010, domain_loss: 0.0028, iso_loss: 0.0134, total_loss: 0.0160, Epoch126_Acc: 93.7213
+Test acc Epoch126: 54.8148
+Train Epoch: [127/300], emotion_loss: 0.0005, domain_loss: 0.0041, iso_loss: 0.0299, total_loss: 0.0329, Epoch127_Acc: 93.7213
+Test acc Epoch127: 55.0617
+Train Epoch: [128/300], emotion_loss: 0.0025, domain_loss: 0.0018, iso_loss: 0.0054, total_loss: 0.0090, Epoch128_Acc: 93.7390
+Test acc Epoch128: 56.2963
+Train Epoch: [129/300], emotion_loss: 0.0086, domain_loss: 0.0120, iso_loss: 0.0279, total_loss: 0.0437, Epoch129_Acc: 93.6332
+Test acc Epoch129: 55.5556
+Train Epoch: [130/300], emotion_loss: 0.0063, domain_loss: 0.0115, iso_loss: 0.0142, total_loss: 0.0274, Epoch130_Acc: 93.6332
+Test acc Epoch130: 54.5679
+Train Epoch: [131/300], emotion_loss: 0.0008, domain_loss: 0.0054, iso_loss: 0.0262, total_loss: 0.0303, Epoch131_Acc: 93.5802
+Test acc Epoch131: 55.0617
+Train Epoch: [132/300], emotion_loss: 0.0006, domain_loss: 0.0056, iso_loss: 0.0207, total_loss: 0.0247, Epoch132_Acc: 93.7037
+Test acc Epoch132: 54.5679
+Train Epoch: [133/300], emotion_loss: 0.0004, domain_loss: 0.0091, iso_loss: 0.0589, total_loss: 0.0649, Epoch133_Acc: 93.6155
+Test acc Epoch133: 54.8148
+Train Epoch: [134/300], emotion_loss: 0.0006, domain_loss: 0.0022, iso_loss: 0.0102, total_loss: 0.0121, Epoch134_Acc: 93.6508
+Test acc Epoch134: 55.0617
+Train Epoch: [135/300], emotion_loss: 0.0018, domain_loss: 0.0055, iso_loss: 0.0317, total_loss: 0.0368, Epoch135_Acc: 93.6508
+Test acc Epoch135: 55.3086
+Train Epoch: [136/300], emotion_loss: 0.0024, domain_loss: 0.0033, iso_loss: 0.0170, total_loss: 0.0213, Epoch136_Acc: 93.6332
+Test acc Epoch136: 55.0617
+Train Epoch: [137/300], emotion_loss: 0.0005, domain_loss: 0.0031, iso_loss: 0.0249, total_loss: 0.0274, Epoch137_Acc: 93.6332
+Test acc Epoch137: 55.0617
+Train Epoch: [138/300], emotion_loss: 0.0006, domain_loss: 0.0042, iso_loss: 0.0240, total_loss: 0.0271, Epoch138_Acc: 93.6332
+Test acc Epoch138: 55.5556
+Train Epoch: [139/300], emotion_loss: 0.0005, domain_loss: 0.0097, iso_loss: 0.0243, total_loss: 0.0307, Epoch139_Acc: 93.6684
+Test acc Epoch139: 56.0494
+Train Epoch: [140/300], emotion_loss: 0.0006, domain_loss: 0.0041, iso_loss: 0.0159, total_loss: 0.0190, Epoch140_Acc: 93.6684
+Test acc Epoch140: 55.8025
+Train Epoch: [141/300], emotion_loss: 0.0021, domain_loss: 0.0072, iso_loss: 0.0404, total_loss: 0.0467, Epoch141_Acc: 93.5979
+Test acc Epoch141: 56.0494
+Train Epoch: [142/300], emotion_loss: 0.0007, domain_loss: 0.0030, iso_loss: 0.0204, total_loss: 0.0229, Epoch142_Acc: 93.5979
+Test acc Epoch142: 56.0494
+Train Epoch: [143/300], emotion_loss: 0.0024, domain_loss: 0.0063, iso_loss: 0.0108, total_loss: 0.0170, Epoch143_Acc: 93.5097
+Test acc Epoch143: 56.2963
+Train Epoch: [144/300], emotion_loss: 0.0008, domain_loss: 0.0054, iso_loss: 0.0250, total_loss: 0.0290, Epoch144_Acc: 93.6155
+Test acc Epoch144: 56.0494
+Train Epoch: [145/300], emotion_loss: 0.0007, domain_loss: 0.0032, iso_loss: 0.0132, total_loss: 0.0158, Epoch145_Acc: 93.6155
+Test acc Epoch145: 56.0494
+Train Epoch: [146/300], emotion_loss: 0.0004, domain_loss: 0.0023, iso_loss: 0.0151, total_loss: 0.0169, Epoch146_Acc: 93.5979
+Test acc Epoch146: 55.8025
+Train Epoch: [147/300], emotion_loss: 0.0007, domain_loss: 0.0039, iso_loss: 0.0135, total_loss: 0.0165, Epoch147_Acc: 93.5802
+Test acc Epoch147: 55.3086
+Train Epoch: [148/300], emotion_loss: 0.0007, domain_loss: 0.0041, iso_loss: 0.0150, total_loss: 0.0182, Epoch148_Acc: 93.5802
+Test acc Epoch148: 55.5556
+Train Epoch: [149/300], emotion_loss: 0.0006, domain_loss: 0.0036, iso_loss: 0.0211, total_loss: 0.0239, Epoch149_Acc: 93.6332
+Test acc Epoch149: 55.8025
+Train Epoch: [150/300], emotion_loss: 0.0032, domain_loss: 0.0081, iso_loss: 0.0241, total_loss: 0.0322, Epoch150_Acc: 93.5097
+Test acc Epoch150: 55.5556
+Train Epoch: [151/300], emotion_loss: 0.0017, domain_loss: 0.0063, iso_loss: 0.0331, total_loss: 0.0386, Epoch151_Acc: 93.4744
+Test acc Epoch151: 55.3086
+Train Epoch: [152/300], emotion_loss: 0.0007, domain_loss: 0.0085, iso_loss: 0.0362, total_loss: 0.0420, Epoch152_Acc: 93.5097
+Test acc Epoch152: 55.3086
+Train Epoch: [153/300], emotion_loss: 0.0003, domain_loss: 0.0047, iso_loss: 0.0356, total_loss: 0.0387, Epoch153_Acc: 93.4568
+Test acc Epoch153: 55.5556
+Train Epoch: [154/300], emotion_loss: 0.0012, domain_loss: 0.0062, iso_loss: 0.0187, total_loss: 0.0236, Epoch154_Acc: 93.3862
+Test acc Epoch154: 55.5556
+Train Epoch: [155/300], emotion_loss: 0.0012, domain_loss: 0.0041, iso_loss: 0.0267, total_loss: 0.0304, Epoch155_Acc: 93.5097
+Test acc Epoch155: 55.0617
+Train Epoch: [156/300], emotion_loss: 0.0016, domain_loss: 0.0052, iso_loss: 0.0148, total_loss: 0.0195, Epoch156_Acc: 93.4921
+Test acc Epoch156: 55.3086
+Train Epoch: [157/300], emotion_loss: 0.0016, domain_loss: 0.0050, iso_loss: 0.0119, total_loss: 0.0165, Epoch157_Acc: 93.4744
+Test acc Epoch157: 55.3086
+Train Epoch: [158/300], emotion_loss: 0.0018, domain_loss: 0.0034, iso_loss: 0.0102, total_loss: 0.0140, Epoch158_Acc: 93.5097
+Test acc Epoch158: 55.5556
+Train Epoch: [159/300], emotion_loss: 0.0021, domain_loss: 0.0034, iso_loss: 0.0137, total_loss: 0.0179, Epoch159_Acc: 93.6332
+Test acc Epoch159: 55.3086
+Train Epoch: [160/300], emotion_loss: 0.0019, domain_loss: 0.0026, iso_loss: 0.0115, total_loss: 0.0150, Epoch160_Acc: 93.4921
+Test acc Epoch160: 55.3086
+Train Epoch: [161/300], emotion_loss: 0.0005, domain_loss: 0.0024, iso_loss: 0.0239, total_loss: 0.0259, Epoch161_Acc: 93.5450
+Test acc Epoch161: 55.0617
+Train Epoch: [162/300], emotion_loss: 0.0008, domain_loss: 0.0032, iso_loss: 0.0164, total_loss: 0.0191, Epoch162_Acc: 93.5626
+Test acc Epoch162: 55.3086
+Train Epoch: [163/300], emotion_loss: 0.0013, domain_loss: 0.0049, iso_loss: 0.0237, total_loss: 0.0280, Epoch163_Acc: 93.5273
+Test acc Epoch163: 55.0617
+Train Epoch: [164/300], emotion_loss: 0.0007, domain_loss: 0.0036, iso_loss: 0.0300, total_loss: 0.0328, Epoch164_Acc: 93.5979
+Test acc Epoch164: 55.5556
+Train Epoch: [165/300], emotion_loss: 0.0013, domain_loss: 0.0078, iso_loss: 0.0281, total_loss: 0.0342, Epoch165_Acc: 93.6155
+Test acc Epoch165: 55.3086
+Train Epoch: [166/300], emotion_loss: 0.0003, domain_loss: 0.0026, iso_loss: 0.0252, total_loss: 0.0271, Epoch166_Acc: 93.5979
+Test acc Epoch166: 55.5556
+Train Epoch: [167/300], emotion_loss: 0.0011, domain_loss: 0.0029, iso_loss: 0.0153, total_loss: 0.0182, Epoch167_Acc: 93.6155
+Test acc Epoch167: 55.5556
+Train Epoch: [168/300], emotion_loss: 0.0017, domain_loss: 0.0050, iso_loss: 0.0192, total_loss: 0.0238, Epoch168_Acc: 93.6155
+Test acc Epoch168: 55.3086
+Train Epoch: [169/300], emotion_loss: 0.0027, domain_loss: 0.0043, iso_loss: 0.0117, total_loss: 0.0169, Epoch169_Acc: 93.6684
+Test acc Epoch169: 55.0617
+Train Epoch: [170/300], emotion_loss: 0.0009, domain_loss: 0.0032, iso_loss: 0.0207, total_loss: 0.0235, Epoch170_Acc: 93.6332
+Test acc Epoch170: 55.5556
+Train Epoch: [171/300], emotion_loss: 0.0013, domain_loss: 0.0039, iso_loss: 0.0234, total_loss: 0.0270, Epoch171_Acc: 93.5979
+Test acc Epoch171: 55.8025
+Train Epoch: [172/300], emotion_loss: 0.0011, domain_loss: 0.0028, iso_loss: 0.0223, total_loss: 0.0251, Epoch172_Acc: 93.4921
+Test acc Epoch172: 55.8025
+Train Epoch: [173/300], emotion_loss: 0.0005, domain_loss: 0.0042, iso_loss: 0.0410, total_loss: 0.0440, Epoch173_Acc: 93.5626
+Test acc Epoch173: 55.5556
+Train Epoch: [174/300], emotion_loss: 0.0021, domain_loss: 0.0041, iso_loss: 0.0134, total_loss: 0.0180, Epoch174_Acc: 93.4921
+Test acc Epoch174: 56.0494
+Train Epoch: [175/300], emotion_loss: 0.0006, domain_loss: 0.0033, iso_loss: 0.0265, total_loss: 0.0291, Epoch175_Acc: 93.4392
+Test acc Epoch175: 55.8025
+Train Epoch: [176/300], emotion_loss: 0.0003, domain_loss: 0.0032, iso_loss: 0.0311, total_loss: 0.0333, Epoch176_Acc: 93.5097
+Test acc Epoch176: 55.0617
+Train Epoch: [177/300], emotion_loss: 0.0010, domain_loss: 0.0019, iso_loss: 0.0171, total_loss: 0.0192, Epoch177_Acc: 93.5273
+Test acc Epoch177: 55.0617
+Train Epoch: [178/300], emotion_loss: 0.0026, domain_loss: 0.0022, iso_loss: 0.0056, total_loss: 0.0095, Epoch178_Acc: 93.5450
+Test acc Epoch178: 55.3086
+Train Epoch: [179/300], emotion_loss: 0.0014, domain_loss: 0.0030, iso_loss: 0.0190, total_loss: 0.0222, Epoch179_Acc: 93.5450
+Test acc Epoch179: 54.8148
+Train Epoch: [180/300], emotion_loss: 0.0008, domain_loss: 0.0023, iso_loss: 0.0176, total_loss: 0.0197, Epoch180_Acc: 93.4744
+Test acc Epoch180: 55.8025
+Train Epoch: [181/300], emotion_loss: 0.0026, domain_loss: 0.0067, iso_loss: 0.0115, total_loss: 0.0181, Epoch181_Acc: 93.4921
+Test acc Epoch181: 55.8025
+Train Epoch: [182/300], emotion_loss: 0.0025, domain_loss: 0.0037, iso_loss: 0.0097, total_loss: 0.0145, Epoch182_Acc: 93.4921
+Test acc Epoch182: 56.0494
+Train Epoch: [183/300], emotion_loss: 0.0007, domain_loss: 0.0043, iso_loss: 0.0311, total_loss: 0.0343, Epoch183_Acc: 93.4744
+Test acc Epoch183: 55.8025
+Train Epoch: [184/300], emotion_loss: 0.0005, domain_loss: 0.0040, iso_loss: 0.0186, total_loss: 0.0215, Epoch184_Acc: 93.5097
+Test acc Epoch184: 55.8025
+Train Epoch: [185/300], emotion_loss: 0.0030, domain_loss: 0.0025, iso_loss: 0.0127, total_loss: 0.0172, Epoch185_Acc: 93.5450
+Test acc Epoch185: 54.5679
+Train Epoch: [186/300], emotion_loss: 0.0007, domain_loss: 0.0021, iso_loss: 0.0129, total_loss: 0.0148, Epoch186_Acc: 93.5097
+Test acc Epoch186: 54.5679
+Train Epoch: [187/300], emotion_loss: 0.0010, domain_loss: 0.0035, iso_loss: 0.0151, total_loss: 0.0182, Epoch187_Acc: 93.5450
+Test acc Epoch187: 55.0617
+Train Epoch: [188/300], emotion_loss: 0.0013, domain_loss: 0.0035, iso_loss: 0.0180, total_loss: 0.0214, Epoch188_Acc: 93.4744
+Test acc Epoch188: 55.0617
+Train Epoch: [189/300], emotion_loss: 0.0016, domain_loss: 0.0022, iso_loss: 0.0128, total_loss: 0.0157, Epoch189_Acc: 93.4921
+Test acc Epoch189: 55.3086
+Train Epoch: [190/300], emotion_loss: 0.0025, domain_loss: 0.0052, iso_loss: 0.0083, total_loss: 0.0139, Epoch190_Acc: 93.4744
+Test acc Epoch190: 55.5556
+Train Epoch: [191/300], emotion_loss: 0.0032, domain_loss: 0.0037, iso_loss: 0.0124, total_loss: 0.0178, Epoch191_Acc: 93.5979
+Test acc Epoch191: 56.0494
+Train Epoch: [192/300], emotion_loss: 0.0011, domain_loss: 0.0036, iso_loss: 0.0113, total_loss: 0.0146, Epoch192_Acc: 93.5273
+Test acc Epoch192: 55.3086
+Train Epoch: [193/300], emotion_loss: 0.0007, domain_loss: 0.0012, iso_loss: 0.0253, total_loss: 0.0267, Epoch193_Acc: 93.4921
+Test acc Epoch193: 56.0494
+Train Epoch: [194/300], emotion_loss: 0.0009, domain_loss: 0.0049, iso_loss: 0.0169, total_loss: 0.0207, Epoch194_Acc: 93.4215
+Test acc Epoch194: 55.5556
+Train Epoch: [195/300], emotion_loss: 0.0007, domain_loss: 0.0026, iso_loss: 0.0146, total_loss: 0.0168, Epoch195_Acc: 93.5097
+Test acc Epoch195: 55.3086
+Train Epoch: [196/300], emotion_loss: 0.0003, domain_loss: 0.0015, iso_loss: 0.0122, total_loss: 0.0133, Epoch196_Acc: 93.5273
+Test acc Epoch196: 55.3086
+Train Epoch: [197/300], emotion_loss: 0.0026, domain_loss: 0.0049, iso_loss: 0.0116, total_loss: 0.0171, Epoch197_Acc: 93.4921
+Test acc Epoch197: 55.5556
+Train Epoch: [198/300], emotion_loss: 0.0003, domain_loss: 0.0028, iso_loss: 0.0220, total_loss: 0.0239, Epoch198_Acc: 93.5273
+Test acc Epoch198: 55.3086
+Train Epoch: [199/300], emotion_loss: 0.0019, domain_loss: 0.0039, iso_loss: 0.0159, total_loss: 0.0202, Epoch199_Acc: 93.5273
+Test acc Epoch199: 55.8025
+Train Epoch: [200/300], emotion_loss: 0.0012, domain_loss: 0.0028, iso_loss: 0.0120, total_loss: 0.0148, Epoch200_Acc: 93.3333
+Test acc Epoch200: 55.5556
+Train Epoch: [201/300], emotion_loss: 0.0023, domain_loss: 0.0042, iso_loss: 0.0166, total_loss: 0.0215, Epoch201_Acc: 93.4039
+Test acc Epoch201: 55.8025
+Train Epoch: [202/300], emotion_loss: 0.0010, domain_loss: 0.0028, iso_loss: 0.0206, total_loss: 0.0233, Epoch202_Acc: 93.4392
+Test acc Epoch202: 55.3086
+Train Epoch: [203/300], emotion_loss: 0.0006, domain_loss: 0.0026, iso_loss: 0.0126, total_loss: 0.0147, Epoch203_Acc: 93.4039
+Test acc Epoch203: 55.5556
+Train Epoch: [204/300], emotion_loss: 0.0005, domain_loss: 0.0026, iso_loss: 0.0265, total_loss: 0.0286, Epoch204_Acc: 93.5097
+Test acc Epoch204: 55.8025
+Train Epoch: [205/300], emotion_loss: 0.0025, domain_loss: 0.0042, iso_loss: 0.0184, total_loss: 0.0234, Epoch205_Acc: 93.5097
+Test acc Epoch205: 56.0494
+Train Epoch: [206/300], emotion_loss: 0.0004, domain_loss: 0.0032, iso_loss: 0.0349, total_loss: 0.0373, Epoch206_Acc: 93.4215
+Test acc Epoch206: 56.0494
+Train Epoch: [207/300], emotion_loss: 0.0006, domain_loss: 0.0022, iso_loss: 0.0145, total_loss: 0.0165, Epoch207_Acc: 93.5273
+Test acc Epoch207: 56.0494
+Train Epoch: [208/300], emotion_loss: 0.0003, domain_loss: 0.0038, iso_loss: 0.0191, total_loss: 0.0217, Epoch208_Acc: 93.5273
+Test acc Epoch208: 56.0494
+Train Epoch: [209/300], emotion_loss: 0.0002, domain_loss: 0.0017, iso_loss: 0.0092, total_loss: 0.0104, Epoch209_Acc: 93.5097
+Test acc Epoch209: 56.0494
+Train Epoch: [210/300], emotion_loss: 0.0005, domain_loss: 0.0022, iso_loss: 0.0277, total_loss: 0.0295, Epoch210_Acc: 93.5626
+Test acc Epoch210: 56.5432
+Train Epoch: [211/300], emotion_loss: 0.0008, domain_loss: 0.0042, iso_loss: 0.0301, total_loss: 0.0334, Epoch211_Acc: 93.5626
+Test acc Epoch211: 56.2963
+Train Epoch: [212/300], emotion_loss: 0.0004, domain_loss: 0.0028, iso_loss: 0.0138, total_loss: 0.0158, Epoch212_Acc: 93.4039
+Test acc Epoch212: 56.0494
+Train Epoch: [213/300], emotion_loss: 0.0003, domain_loss: 0.0030, iso_loss: 0.0229, total_loss: 0.0250, Epoch213_Acc: 93.4568
+Test acc Epoch213: 56.2963
+Train Epoch: [214/300], emotion_loss: 0.0018, domain_loss: 0.0043, iso_loss: 0.0141, total_loss: 0.0185, Epoch214_Acc: 93.3862
+Test acc Epoch214: 56.5432
+Train Epoch: [215/300], emotion_loss: 0.0035, domain_loss: 0.0050, iso_loss: 0.0187, total_loss: 0.0252, Epoch215_Acc: 93.3686
+Test acc Epoch215: 55.8025
+Train Epoch: [216/300], emotion_loss: 0.0006, domain_loss: 0.0046, iso_loss: 0.0168, total_loss: 0.0202, Epoch216_Acc: 93.4568
+Test acc Epoch216: 56.0494
+Train Epoch: [217/300], emotion_loss: 0.0016, domain_loss: 0.0028, iso_loss: 0.0084, total_loss: 0.0117, Epoch217_Acc: 93.4921
+Test acc Epoch217: 56.0494
+Train Epoch: [218/300], emotion_loss: 0.0003, domain_loss: 0.0023, iso_loss: 0.0183, total_loss: 0.0200, Epoch218_Acc: 93.5273
+Test acc Epoch218: 56.0494
+Train Epoch: [219/300], emotion_loss: 0.0004, domain_loss: 0.0012, iso_loss: 0.0190, total_loss: 0.0202, Epoch219_Acc: 93.4392
+Test acc Epoch219: 55.5556
+Train Epoch: [220/300], emotion_loss: 0.0007, domain_loss: 0.0024, iso_loss: 0.0139, total_loss: 0.0160, Epoch220_Acc: 93.4039
+Test acc Epoch220: 56.0494
+Train Epoch: [221/300], emotion_loss: 0.0010, domain_loss: 0.0032, iso_loss: 0.0248, total_loss: 0.0277, Epoch221_Acc: 93.3686
+Test acc Epoch221: 55.8025
+Train Epoch: [222/300], emotion_loss: 0.0014, domain_loss: 0.0033, iso_loss: 0.0123, total_loss: 0.0157, Epoch222_Acc: 93.3510
+Test acc Epoch222: 55.8025
+Train Epoch: [223/300], emotion_loss: 0.0014, domain_loss: 0.0033, iso_loss: 0.0166, total_loss: 0.0201, Epoch223_Acc: 93.3686
+Test acc Epoch223: 55.5556
+Train Epoch: [224/300], emotion_loss: 0.0019, domain_loss: 0.0031, iso_loss: 0.0119, total_loss: 0.0156, Epoch224_Acc: 93.4215
+Test acc Epoch224: 55.8025
+Train Epoch: [225/300], emotion_loss: 0.0026, domain_loss: 0.0020, iso_loss: 0.0062, total_loss: 0.0099, Epoch225_Acc: 93.4039
+Test acc Epoch225: 56.0494
+Train Epoch: [226/300], emotion_loss: 0.0004, domain_loss: 0.0015, iso_loss: 0.0100, total_loss: 0.0113, Epoch226_Acc: 93.4568
+Test acc Epoch226: 56.2963
+Train Epoch: [227/300], emotion_loss: 0.0009, domain_loss: 0.0036, iso_loss: 0.0261, total_loss: 0.0292, Epoch227_Acc: 93.4215
+Test acc Epoch227: 57.0370
+Train Epoch: [228/300], emotion_loss: 0.0004, domain_loss: 0.0040, iso_loss: 0.0266, total_loss: 0.0294, Epoch228_Acc: 93.4568
+Test acc Epoch228: 57.5309
+Train Epoch: [229/300], emotion_loss: 0.0003, domain_loss: 0.0015, iso_loss: 0.0129, total_loss: 0.0142, Epoch229_Acc: 93.3862
+Test acc Epoch229: 57.7778
+Train Epoch: [230/300], emotion_loss: 0.0004, domain_loss: 0.0016, iso_loss: 0.0225, total_loss: 0.0239, Epoch230_Acc: 93.4215
+Test acc Epoch230: 56.7901
+Train Epoch: [231/300], emotion_loss: 0.0004, domain_loss: 0.0024, iso_loss: 0.0207, total_loss: 0.0226, Epoch231_Acc: 93.3510
+Test acc Epoch231: 56.2963
+Train Epoch: [232/300], emotion_loss: 0.0005, domain_loss: 0.0035, iso_loss: 0.0115, total_loss: 0.0141, Epoch232_Acc: 93.3333
+Test acc Epoch232: 56.7901
+Train Epoch: [233/300], emotion_loss: 0.0010, domain_loss: 0.0038, iso_loss: 0.0155, total_loss: 0.0188, Epoch233_Acc: 93.4568
+Test acc Epoch233: 56.2963
+Train Epoch: [234/300], emotion_loss: 0.0006, domain_loss: 0.0027, iso_loss: 0.0194, total_loss: 0.0216, Epoch234_Acc: 93.3862
+Test acc Epoch234: 56.7901
+Train Epoch: [235/300], emotion_loss: 0.0006, domain_loss: 0.0025, iso_loss: 0.0172, total_loss: 0.0193, Epoch235_Acc: 93.3157
+Test acc Epoch235: 57.0370
+Train Epoch: [236/300], emotion_loss: 0.0005, domain_loss: 0.0023, iso_loss: 0.0157, total_loss: 0.0177, Epoch236_Acc: 93.4039
+Test acc Epoch236: 57.2840
+Train Epoch: [237/300], emotion_loss: 0.0013, domain_loss: 0.0032, iso_loss: 0.0137, total_loss: 0.0169, Epoch237_Acc: 93.4215
+Test acc Epoch237: 57.0370
+Train Epoch: [238/300], emotion_loss: 0.0008, domain_loss: 0.0025, iso_loss: 0.0139, total_loss: 0.0162, Epoch238_Acc: 93.3333
+Test acc Epoch238: 57.5309
+Train Epoch: [239/300], emotion_loss: 0.0003, domain_loss: 0.0013, iso_loss: 0.0122, total_loss: 0.0133, Epoch239_Acc: 93.3862
+Test acc Epoch239: 57.7778
+Train Epoch: [240/300], emotion_loss: 0.0020, domain_loss: 0.0028, iso_loss: 0.0106, total_loss: 0.0143, Epoch240_Acc: 93.4392
+Test acc Epoch240: 58.0247
+Train Epoch: [241/300], emotion_loss: 0.0027, domain_loss: 0.0021, iso_loss: 0.0057, total_loss: 0.0096, Epoch241_Acc: 93.4744
+Test acc Epoch241: 57.7778
+Train Epoch: [242/300], emotion_loss: 0.0008, domain_loss: 0.0016, iso_loss: 0.0145, total_loss: 0.0163, Epoch242_Acc: 93.3510
+Test acc Epoch242: 56.7901
+Train Epoch: [243/300], emotion_loss: 0.0005, domain_loss: 0.0012, iso_loss: 0.0112, total_loss: 0.0124, Epoch243_Acc: 93.3333
+Test acc Epoch243: 57.5309
+Train Epoch: [244/300], emotion_loss: 0.0005, domain_loss: 0.0024, iso_loss: 0.0135, total_loss: 0.0154, Epoch244_Acc: 93.3686
+Test acc Epoch244: 57.5309
+Train Epoch: [245/300], emotion_loss: 0.0002, domain_loss: 0.0023, iso_loss: 0.0201, total_loss: 0.0217, Epoch245_Acc: 93.3510
+Test acc Epoch245: 58.0247
+Train Epoch: [246/300], emotion_loss: 0.0029, domain_loss: 0.0038, iso_loss: 0.0153, total_loss: 0.0204, Epoch246_Acc: 93.4392
+Test acc Epoch246: 57.5309
+Train Epoch: [247/300], emotion_loss: 0.0005, domain_loss: 0.0038, iso_loss: 0.0279, total_loss: 0.0307, Epoch247_Acc: 93.4215
+Test acc Epoch247: 58.0247
+Train Epoch: [248/300], emotion_loss: 0.0003, domain_loss: 0.0016, iso_loss: 0.0161, total_loss: 0.0173, Epoch248_Acc: 93.4568
+Test acc Epoch248: 58.0247
+Train Epoch: [249/300], emotion_loss: 0.0011, domain_loss: 0.0032, iso_loss: 0.0136, total_loss: 0.0167, Epoch249_Acc: 93.4039
+Test acc Epoch249: 58.0247
+Train Epoch: [250/300], emotion_loss: 0.0004, domain_loss: 0.0025, iso_loss: 0.0160, total_loss: 0.0179, Epoch250_Acc: 93.4039
+Test acc Epoch250: 57.7778
+Train Epoch: [251/300], emotion_loss: 0.0010, domain_loss: 0.0028, iso_loss: 0.0097, total_loss: 0.0124, Epoch251_Acc: 93.3686
+Test acc Epoch251: 57.7778
+Train Epoch: [252/300], emotion_loss: 0.0003, domain_loss: 0.0034, iso_loss: 0.0296, total_loss: 0.0319, Epoch252_Acc: 93.3686
+Test acc Epoch252: 58.0247
+Train Epoch: [253/300], emotion_loss: 0.0003, domain_loss: 0.0044, iso_loss: 0.0387, total_loss: 0.0416, Epoch253_Acc: 93.4039
+Test acc Epoch253: 58.0247
+Train Epoch: [254/300], emotion_loss: 0.0005, domain_loss: 0.0019, iso_loss: 0.0179, total_loss: 0.0195, Epoch254_Acc: 93.3862
+Test acc Epoch254: 58.0247
+Train Epoch: [255/300], emotion_loss: 0.0007, domain_loss: 0.0039, iso_loss: 0.0107, total_loss: 0.0138, Epoch255_Acc: 93.4039
+Test acc Epoch255: 58.0247
+Train Epoch: [256/300], emotion_loss: 0.0004, domain_loss: 0.0032, iso_loss: 0.0211, total_loss: 0.0234, Epoch256_Acc: 93.4215
+Test acc Epoch256: 58.0247
+Train Epoch: [257/300], emotion_loss: 0.0023, domain_loss: 0.0019, iso_loss: 0.0048, total_loss: 0.0082, Epoch257_Acc: 93.3333
+Test acc Epoch257: 58.0247
+Train Epoch: [258/300], emotion_loss: 0.0006, domain_loss: 0.0042, iso_loss: 0.0234, total_loss: 0.0265, Epoch258_Acc: 93.2628
+Test acc Epoch258: 58.0247
+Train Epoch: [259/300], emotion_loss: 0.0014, domain_loss: 0.0020, iso_loss: 0.0071, total_loss: 0.0096, Epoch259_Acc: 93.3510
+Test acc Epoch259: 58.0247
+Train Epoch: [260/300], emotion_loss: 0.0013, domain_loss: 0.0016, iso_loss: 0.0043, total_loss: 0.0065, Epoch260_Acc: 93.3333
+Test acc Epoch260: 58.0247
+Train Epoch: [261/300], emotion_loss: 0.0017, domain_loss: 0.0033, iso_loss: 0.0049, total_loss: 0.0086, Epoch261_Acc: 93.4039
+Test acc Epoch261: 58.2716
+Train Epoch: [262/300], emotion_loss: 0.0001, domain_loss: 0.0019, iso_loss: 0.0209, total_loss: 0.0222, Epoch262_Acc: 93.4215
+Test acc Epoch262: 58.0247
+Train Epoch: [263/300], emotion_loss: 0.0004, domain_loss: 0.0029, iso_loss: 0.0172, total_loss: 0.0194, Epoch263_Acc: 93.4744
+Test acc Epoch263: 58.0247
+Train Epoch: [264/300], emotion_loss: 0.0006, domain_loss: 0.0036, iso_loss: 0.0227, total_loss: 0.0255, Epoch264_Acc: 93.2451
+Test acc Epoch264: 58.0247
+Train Epoch: [265/300], emotion_loss: 0.0002, domain_loss: 0.0029, iso_loss: 0.0159, total_loss: 0.0179, Epoch265_Acc: 93.3686
+Test acc Epoch265: 58.2716
+Train Epoch: [266/300], emotion_loss: 0.0007, domain_loss: 0.0014, iso_loss: 0.0077, total_loss: 0.0093, Epoch266_Acc: 93.3862
+Test acc Epoch266: 58.2716
+Train Epoch: [267/300], emotion_loss: 0.0003, domain_loss: 0.0038, iso_loss: 0.0257, total_loss: 0.0283, Epoch267_Acc: 93.3862
+Test acc Epoch267: 58.5185
+Train Epoch: [268/300], emotion_loss: 0.0010, domain_loss: 0.0025, iso_loss: 0.0092, total_loss: 0.0117, Epoch268_Acc: 93.4215
+Test acc Epoch268: 58.5185
+Train Epoch: [269/300], emotion_loss: 0.0008, domain_loss: 0.0040, iso_loss: 0.0101, total_loss: 0.0133, Epoch269_Acc: 93.3862
+Test acc Epoch269: 58.5185
+Train Epoch: [270/300], emotion_loss: 0.0001, domain_loss: 0.0017, iso_loss: 0.0134, total_loss: 0.0146, Epoch270_Acc: 93.4215
+Test acc Epoch270: 58.2716
+Train Epoch: [271/300], emotion_loss: 0.0009, domain_loss: 0.0028, iso_loss: 0.0183, total_loss: 0.0208, Epoch271_Acc: 93.4568
+Test acc Epoch271: 58.0247
+Train Epoch: [272/300], emotion_loss: 0.0008, domain_loss: 0.0026, iso_loss: 0.0142, total_loss: 0.0165, Epoch272_Acc: 93.3333
+Test acc Epoch272: 58.2716
+Train Epoch: [273/300], emotion_loss: 0.0010, domain_loss: 0.0032, iso_loss: 0.0146, total_loss: 0.0175, Epoch273_Acc: 93.3333
+Test acc Epoch273: 58.2716
+Train Epoch: [274/300], emotion_loss: 0.0003, domain_loss: 0.0008, iso_loss: 0.0163, total_loss: 0.0171, Epoch274_Acc: 93.3333
+Test acc Epoch274: 57.7778
+Train Epoch: [275/300], emotion_loss: 0.0014, domain_loss: 0.0049, iso_loss: 0.0129, total_loss: 0.0172, Epoch275_Acc: 93.2981
+Test acc Epoch275: 57.7778
+Train Epoch: [276/300], emotion_loss: 0.0005, domain_loss: 0.0019, iso_loss: 0.0150, total_loss: 0.0166, Epoch276_Acc: 93.3862
+Test acc Epoch276: 57.7778
+Train Epoch: [277/300], emotion_loss: 0.0023, domain_loss: 0.0032, iso_loss: 0.0140, total_loss: 0.0182, Epoch277_Acc: 93.3157
+Test acc Epoch277: 57.7778
+Train Epoch: [278/300], emotion_loss: 0.0004, domain_loss: 0.0039, iso_loss: 0.0133, total_loss: 0.0160, Epoch278_Acc: 93.2451
+Test acc Epoch278: 58.2716
+Train Epoch: [279/300], emotion_loss: 0.0006, domain_loss: 0.0037, iso_loss: 0.0170, total_loss: 0.0198, Epoch279_Acc: 93.3686
+Test acc Epoch279: 58.2716
+Train Epoch: [280/300], emotion_loss: 0.0003, domain_loss: 0.0029, iso_loss: 0.0230, total_loss: 0.0250, Epoch280_Acc: 93.3686
+Test acc Epoch280: 58.7654
+Train Epoch: [281/300], emotion_loss: 0.0002, domain_loss: 0.0033, iso_loss: 0.0149, total_loss: 0.0171, Epoch281_Acc: 93.2451
+Test acc Epoch281: 58.0247
+Train Epoch: [282/300], emotion_loss: 0.0007, domain_loss: 0.0007, iso_loss: 0.0066, total_loss: 0.0077, Epoch282_Acc: 93.2628
+Test acc Epoch282: 58.2716
+Train Epoch: [283/300], emotion_loss: 0.0019, domain_loss: 0.0038, iso_loss: 0.0182, total_loss: 0.0224, Epoch283_Acc: 93.2628
+Test acc Epoch283: 58.5185
+Train Epoch: [284/300], emotion_loss: 0.0003, domain_loss: 0.0021, iso_loss: 0.0154, total_loss: 0.0170, Epoch284_Acc: 93.2981
+Test acc Epoch284: 58.2716
+Train Epoch: [285/300], emotion_loss: 0.0007, domain_loss: 0.0025, iso_loss: 0.0230, total_loss: 0.0251, Epoch285_Acc: 93.2981
+Test acc Epoch285: 58.2716
+Train Epoch: [286/300], emotion_loss: 0.0014, domain_loss: 0.0051, iso_loss: 0.0146, total_loss: 0.0191, Epoch286_Acc: 93.2628
+Test acc Epoch286: 58.2716
+Train Epoch: [287/300], emotion_loss: 0.0004, domain_loss: 0.0028, iso_loss: 0.0285, total_loss: 0.0305, Epoch287_Acc: 93.2804
+Test acc Epoch287: 58.2716
+Train Epoch: [288/300], emotion_loss: 0.0004, domain_loss: 0.0007, iso_loss: 0.0138, total_loss: 0.0146, Epoch288_Acc: 93.2981
+Test acc Epoch288: 58.2716
+Train Epoch: [289/300], emotion_loss: 0.0003, domain_loss: 0.0043, iso_loss: 0.0202, total_loss: 0.0231, Epoch289_Acc: 93.3510
+Test acc Epoch289: 58.2716
+Train Epoch: [290/300], emotion_loss: 0.0008, domain_loss: 0.0040, iso_loss: 0.0193, total_loss: 0.0225, Epoch290_Acc: 93.3157
+Test acc Epoch290: 58.2716
+Train Epoch: [291/300], emotion_loss: 0.0004, domain_loss: 0.0042, iso_loss: 0.0226, total_loss: 0.0256, Epoch291_Acc: 93.2628
+Test acc Epoch291: 58.2716
+Train Epoch: [292/300], emotion_loss: 0.0009, domain_loss: 0.0026, iso_loss: 0.0084, total_loss: 0.0108, Epoch292_Acc: 93.3686
+Test acc Epoch292: 58.2716
+Train Epoch: [293/300], emotion_loss: 0.0004, domain_loss: 0.0045, iso_loss: 0.0133, total_loss: 0.0164, Epoch293_Acc: 93.2275
+Test acc Epoch293: 58.0247
+Train Epoch: [294/300], emotion_loss: 0.0003, domain_loss: 0.0023, iso_loss: 0.0161, total_loss: 0.0178, Epoch294_Acc: 93.2099
+Test acc Epoch294: 58.2716
+Train Epoch: [295/300], emotion_loss: 0.0003, domain_loss: 0.0039, iso_loss: 0.0176, total_loss: 0.0203, Epoch295_Acc: 93.2099
+Test acc Epoch295: 58.0247
+Train Epoch: [296/300], emotion_loss: 0.0006, domain_loss: 0.0049, iso_loss: 0.0219, total_loss: 0.0254, Epoch296_Acc: 93.1746
+Test acc Epoch296: 58.5185
+Train Epoch: [297/300], emotion_loss: 0.0008, domain_loss: 0.0059, iso_loss: 0.0232, total_loss: 0.0275, Epoch297_Acc: 93.1393
+Test acc Epoch297: 58.5185
+Train Epoch: [298/300], emotion_loss: 0.0008, domain_loss: 0.0019, iso_loss: 0.0063, total_loss: 0.0082, Epoch298_Acc: 93.1746
+Test acc Epoch298: 58.2716
+Train Epoch: [299/300], emotion_loss: 0.0009, domain_loss: 0.0049, iso_loss: 0.0294, total_loss: 0.0333, Epoch299_Acc: 93.0688
+Test acc Epoch299: 58.5185
