@@ -22,7 +22,7 @@ segment7:数据处理方式为moving average; 数据形式(45, 310, 180),对(45,
 
 parser = argparse.ArgumentParser()  # 创建对象
 parser.add_argument('--cuda', type=int, default=0)
-parser.add_argument('--nEpoch', type=int, default=200)
+parser.add_argument('--nEpoch', type=int, default=100)
 
 # parse_args()将之前add_argument()定义的参数进行赋值，并返回相关的设置
 args = parser.parse_args()
