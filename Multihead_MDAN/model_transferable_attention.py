@@ -97,12 +97,12 @@ class Feature_Get_Block(nn.Module):
     def forward(self,x):
         return self.selfattention(self.inf(x))
 class MultiScaleBlock(nn.Module):
-    def __init__(self, in_channels=62, out_channels=62,size=900,nums_parallel=8):
+    def __init__(self, in_channels=62, out_channels=62,size=900,nums_parallel=4):
         super(MultiScaleBlock, self).__init__()
         self.block = nn.ModuleList([
-            Feature_Get_Block(in_channels,out_channels,stride=5*(i+3),size=size) for i in range(nums_parallel)
+            Feature_Get_Block(in_channels,out_channels,stride=5*(i+1),size=size) for i in range(nums_parallel)
         ])
-        self.out_size=sum([int(size//(5*(i+3))) for i in range(nums_parallel)])
+        self.out_size=sum([int(size//(5*(i+1))) for i in range(nums_parallel)])
     def forward(self, x):
         result=[]
         for layer in self.block:
@@ -177,7 +177,7 @@ class ResBlock(nn.Module):
 class FeatureExtraction(nn.Module):
     def __init__(self):
         super(FeatureExtraction, self).__init__()
-        self.multiScaleBlock =MultiScaleBlockLayer(62,900,nums_layer=2)
+        self.multiScaleBlock =MultiScaleBlockLayer(62,900,nums_layer=4)
         self.global_attention = AttentionLayer(4, self.multiScaleBlock.out_size)
         self.out_size=self.multiScaleBlock.out_size
     def forward(self, x):
