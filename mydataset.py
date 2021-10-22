@@ -1,9 +1,9 @@
 from torch.utils.data import Dataset
-import numpy as np
 import torch
 
+
 class Mydataset(Dataset):
-    def __init__(self,data,label):
+    def __init__(self, data, label):
         self.data = data
         self.label = label
         # self.transform = transforms.Compose([transforms.ToTensor()])

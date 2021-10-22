@@ -183,5 +183,5 @@ if __name__ == '__main__':
         myNet = model1.NewModel(in_channel=310, out_channel=128, res_inchannel=256, res_outchannel=128).cuda()
         LR = 0.1
         optimizer = optim.SGD(myNet.parameters(), lr=LR)
-        scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[20, 100, 150], gamma=0.9)
+        scheduler = optim.lr_scheduler.MultiStepLR(optimizer,milestones=[75, 100, 150], gamma=0.9)
         train(myNet, optimizer, source_data_loader, target_data_loader)

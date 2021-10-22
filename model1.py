@@ -44,38 +44,34 @@ class MultiResolutionCNN(nn.Module):
     def __init__(self, in_channel, out_channel):
         # 设置in_channel=310,out_channel=128
         super(MultiResolutionCNN, self).__init__()
-        self.LowResolution = nn.Sequential()
-        self.LowResolution.add_module('L_conv1', nn.Conv1d(in_channel, out_channel, kernel_size=3, stride=3))
-        self.LowResolution.add_module('L_relu1', nn.ReLU())
-        self.LowResolution.add_module('L_pool1', nn.AvgPool1d(kernel_size=8, stride=2))
-        self.LowResolution.add_module('L_conv2', nn.Conv1d(out_channel, 2*out_channel, kernel_size=2, stride=2))
-        self.LowResolution.add_module('L_relu2', nn.ReLU())
+        self.Resolution1 = nn.Sequential()
+        self.Resolution1.add_module('R1_conv1', nn.Conv1d(in_channel, out_channel, kernel_size=6, stride=3))
+        self.Resolution1.add_module('R1_relu1', nn.ReLU())
+        self.Resolution1.add_module('R1_pool1', nn.MaxPool1d(kernel_size=4, stride=2))
+        self.Resolution1.add_module('R1_conv2', nn.Conv1d(out_channel, 2*out_channel, kernel_size=2, stride=1))
+        self.Resolution1.add_module('R1_relu2', nn.ReLU())
 
-        self.HighResolution = nn.Sequential()
-        self.HighResolution.add_module('H_conv1', nn.Conv1d(in_channel, out_channel, kernel_size=20, stride=3))
-        self.HighResolution.add_module('H_relu1', nn.ReLU())
-        self.HighResolution.add_module('H_pool1', nn.AvgPool1d(kernel_size=4, stride=2))
-        self.HighResolution.add_module('H_conv2', nn.Conv1d(out_channel, 2 * out_channel, kernel_size=2, stride=2))
-        self.HighResolution.add_module('H_relu2', nn.ReLU())
+        self.Resolution2 = nn.Sequential()
+        self.Resolution2.add_module('R2_conv1', nn.Conv1d(in_channel, out_channel, kernel_size=20, stride=4))
+        self.Resolution2.add_module('R2_relu1', nn.ReLU())
+        self.Resolution2.add_module('R2_pool1', nn.MaxPool1d(kernel_size=4, stride=2))
+        self.Resolution2.add_module('R2_conv2', nn.Conv1d(out_channel, 2 * out_channel, kernel_size=2, stride=1))
+        self.Resolution2.add_module('R2_relu2', nn.ReLU())
 
-    def forward(self, x):
-        x1 = self.LowResolution(x)
-        x2 = self.HighResolution(x)
-
-        return x
-
-
-class HighResolutionCNN(nn.Module):
-    def __init__(self, in_channel, out_channel):
-        # 设置in_channel=310,out_channel=128
-        super(HighResolutionCNN, self).__init__()
-
-        # self.HighResolution.add_module('H_conv3', nn.Conv1d(2*out_channel, 2*out_channel, kernel_size=2, stride=2))
-        # self.HighResolution.add_module('H_relu3', nn.ReLU())  # (256,13)
+        self.Resolution3 = nn.Sequential()
+        self.Resolution3.add_module('R3_conv1', nn.Conv1d(in_channel, out_channel, kernel_size=60, stride=10))
+        self.Resolution3.add_module('R3_relu1', nn.ReLU())
+        self.Resolution3.add_module('R3_pool1', nn.MaxPool1d(kernel_size=4, stride=2))
+        self.Resolution3.add_module('R3_conv2', nn.Conv1d(out_channel, 2 * out_channel, kernel_size=2, stride=1))
+        self.Resolution3.add_module('R3_relu2', nn.ReLU())
 
     def forward(self, x):
-        x = self.HighResolution(x)
-        return x
+        x1 = self.Resolution1(x)
+        x2 = self.Resolution2(x)
+        x3 = self.Resolution3(x)
+        x_out = torch.cat((x1, x2), dim=2)
+        x_out = torch.cat((x_out, x3), dim=2)
+        return x_out
 
 
 class ResidualBlock(nn.Module):
@@ -85,8 +81,11 @@ class ResidualBlock(nn.Module):
         self.residualNet = nn.Sequential()
         self.residualNet.add_module('res_conv1', nn.Conv1d(res_inchannel, res_outchannel, kernel_size=1, stride=1))
         self.residualNet.add_module('res_relu1', nn.ReLU(True))
-        self.residualNet.add_module('res_conv2', nn.Conv1d(res_outchannel, res_outchannel, kernel_size=1, stride=1))
+        self.residualNet.add_module('res_conv2', nn.Conv1d(res_outchannel, res_outchannel, kernel_size=3, stride=1,
+                                                           padding=1))
         self.residualNet.add_module('res_relu2', nn.ReLU(True))
+        self.residualNet.add_module('res_conv3', nn.Conv1d(res_outchannel, res_outchannel, kernel_size=1, stride=1))
+        self.residualNet.add_module('res_relu3', nn.ReLU(True))
         self.relu = nn.ReLU(True)
         self.Mlp = nn.Sequential(
             nn.Linear(res_outchannel, res_outchannel // 16),
@@ -94,7 +93,7 @@ class ResidualBlock(nn.Module):
             nn.Linear(res_outchannel // 16, res_outchannel),
             nn.Sigmoid()
         )
-        self.avg_pool = nn.MaxPool1d(kernel_size=17)
+        self.avg_pool = nn.AvgPool1d(kernel_size=49)
         self.conv = nn.Conv1d(256, 128, kernel_size=1, stride=1)
 
     def forward(self, x):
@@ -108,7 +107,6 @@ class ResidualBlock(nn.Module):
         out = residual + res_x
         out = self.relu(out)
         return out
-        #  (B*128*26)
 
 
 class NewModel(nn.Module):
@@ -116,71 +114,60 @@ class NewModel(nn.Module):
 
         super(NewModel, self).__init__()
         self.channel_attention = ChannelWiseAttention(in_channel)
-        self.low_CNN = LowResolutionCNN(in_channel, out_channel)
-        self.high_CNN = HighResolutionCNN(in_channel, out_channel)
+        self.multi_resolution = MultiResolutionCNN(in_channel, out_channel)
         self.residual_block = ResidualBlock(res_inchannel, res_outchannel)
 
     #  class_predictor
         self.class_predictor = nn.Sequential()
-        self.class_predictor.add_module('c_fc1', nn.Linear(128 * 26, 1024))
+        self.class_predictor.add_module('c_fc1', nn.Linear(128 * 49, 1024))
         self.class_predictor.add_module('c_bn1', nn.BatchNorm1d(1024))
         self.class_predictor.add_module('c_relu', nn.LeakyReLU(1e-2, inplace=True))
         self.class_predictor.add_module('c_drop1', nn.Dropout(p=0.3))
         self.class_predictor.add_module('c_fc2', nn.Linear(1024, 3))
-
         self.softmax_c = nn.Softmax(dim=1)
 
     # domain_discriminator(分类)
         self.domain_discriminator0 = nn.Sequential()
-        self.domain_discriminator0.add_module('d0_fc1', nn.Linear(128 * 26, 1024))
-        self.domain_discriminator0.add_module('d0_bn1', nn.BatchNorm1d(1024))
+        self.domain_discriminator0.add_module('d0_fc1', nn.Linear(128 * 49, 2048))
+        self.domain_discriminator0.add_module('d0_bn1', nn.BatchNorm1d(2048))
         self.domain_discriminator0.add_module('d0_relu1', nn.LeakyReLU(1e-2, inplace=True))
-        self.domain_discriminator0.add_module('d0_fc2', nn.Linear(1024, 512))
-        self.domain_discriminator0.add_module('d0_bn2', nn.BatchNorm1d(512))
+        self.domain_discriminator0.add_module('d0_fc2', nn.Linear(2048, 1024))
+        self.domain_discriminator0.add_module('d0_bn2', nn.BatchNorm1d(1024))
         self.domain_discriminator0.add_module('d0_relu2', nn.LeakyReLU(1e-2, inplace=True))
-        self.domain_discriminator0.add_module('d0_fc3', nn.Linear(512, 2))
+        self.domain_discriminator0.add_module('d0_fc3', nn.Linear(1024, 2))
 
         self.domain_discriminator1 = nn.Sequential()
-        self.domain_discriminator1.add_module('d1_fc1', nn.Linear(128 * 26, 1024))
-        self.domain_discriminator1.add_module('d1_bn1', nn.BatchNorm1d(1024))
+        self.domain_discriminator1.add_module('d1_fc1', nn.Linear(128 * 49, 2048))
+        self.domain_discriminator1.add_module('d1_bn1', nn.BatchNorm1d(2048))
         self.domain_discriminator1.add_module('d1_relu1', nn.LeakyReLU(1e-2, inplace=True))
-        self.domain_discriminator1.add_module('d1_fc2', nn.Linear(1024, 512))
-        self.domain_discriminator1.add_module('d1_bn2', nn.BatchNorm1d(512))
+        self.domain_discriminator1.add_module('d1_fc2', nn.Linear(2048, 1024))
+        self.domain_discriminator1.add_module('d1_bn2', nn.BatchNorm1d(1024))
         self.domain_discriminator1.add_module('d1_relu2', nn.LeakyReLU(1e-2, inplace=True))
-        self.domain_discriminator1.add_module('d1_fc3', nn.Linear(512, 2))
+        self.domain_discriminator1.add_module('d1_fc3', nn.Linear(1024, 2))
 
         self.domain_discriminator2 = nn.Sequential()
-        self.domain_discriminator2.add_module('d2_fc1', nn.Linear(128 * 26, 1024))
-        self.domain_discriminator2.add_module('d2_bn1', nn.BatchNorm1d(1024))
+        self.domain_discriminator2.add_module('d2_fc1', nn.Linear(128 * 49, 2048))
+        self.domain_discriminator2.add_module('d2_bn1', nn.BatchNorm1d(2048))
         self.domain_discriminator2.add_module('d2_relu1', nn.LeakyReLU(1e-2, inplace=True))
-        self.domain_discriminator2.add_module('d2_fc2', nn.Linear(1024, 512))
-        self.domain_discriminator2.add_module('d2_bn2', nn.BatchNorm1d(512))
+        self.domain_discriminator2.add_module('d2_fc2', nn.Linear(2048, 1024))
+        self.domain_discriminator2.add_module('d2_bn2', nn.BatchNorm1d(1024))
         self.domain_discriminator2.add_module('d2_relu2', nn.LeakyReLU(1e-2, inplace=True))
-        self.domain_discriminator2.add_module('d2_fc3', nn.Linear(512, 2))
-
+        self.domain_discriminator2.add_module('d2_fc3', nn.Linear(1024, 2))
         self.drop = nn.Dropout(p=0.3)
 
     def forward(self, mode, data_s, data_t, alpha):
         # 输入数据（B*C*L）
         data_s_c = self.channel_attention(data_s)
-        # print('data_s_c:', data_s_c.shape)
-        data_s1 = self.low_CNN(data_s_c)
-        # print('data_s1:', data_s1.shape)
-        data_s2 = self.high_CNN(data_s_c)
-        # print('data_s2:', data_s2.shape)
-        data_s_total = torch.cat((data_s1, data_s2), dim=2)
-        # print('data_s_total:',data_s_total.shape)
-        data_s_total = self.drop(data_s_total)
+        data_s = self.multi_resolution(data_s_c)
+        data_s_total = self.drop(data_s)
         feature_s = self.residual_block(data_s_total)
         b_s, c_s, l_s = feature_s.shape
         feature_s = feature_s.view(b_s, c_s * l_s)
         reverse_feature_s = ReverseLayerF.apply(feature_s, alpha)
 
         data_t_c = self.channel_attention(data_t)
-        data_t1 = self.low_CNN(data_t_c)
-        data_t2 = self.high_CNN(data_t_c)
-        data_t_total = torch.cat((data_t1, data_t2), dim=2)
-        data_t_total = self.drop(data_t_total)
+        data_t = self.multi_resolution(data_t_c)
+        data_t_total = self.drop(data_t)
         feature_t = self.residual_block(data_t_total)
         b_t, c_t, l_t = feature_t.shape
         feature_t = feature_t.view(b_t, c_t * l_t)
@@ -188,35 +175,35 @@ class NewModel(nn.Module):
 
         # label predictor
         s_label = self.class_predictor(feature_s)
-        pseudo_s_label = self.softmax_c(s_label)
+        # pseudo_s_label = self.softmax_c(s_label)
         t_label = self.class_predictor(feature_t)
-        pseudo_t_label = self.softmax_c(t_label)
+        # pseudo_t_label = self.softmax_c(t_label)
         #  class-wised domain adaptation
         domain_s = []
         domain_t = []
         if mode == 'train':
             # 维度转换变成可以用来进行sub-domain分类的维度
-            ps0 = pseudo_s_label[:, 0].reshape(data_s.shape[0], 1)
+            ps0 = s_label[:, 0].reshape(data_s.shape[0], 1)
             fs0 = ps0 * reverse_feature_s
-            pt0 = pseudo_t_label[:, 0].reshape(data_t.shape[0], 1)
+            pt0 = t_label[:, 0].reshape(data_t.shape[0], 1)
             ft0 = pt0 * reverse_feature_t
             out_s0 = self.domain_discriminator0(fs0)
             domain_s.append(out_s0)
             out_t0 = self.domain_discriminator0(ft0)
             domain_t.append(out_t0)
 
-            ps1 = pseudo_s_label[:, 1].reshape(data_s.shape[0], 1)
+            ps1 = s_label[:, 1].reshape(data_s.shape[0], 1)
             fs1 = ps1 * reverse_feature_s
-            pt1 = pseudo_t_label[:, 1].reshape(data_t.shape[0], 1)
+            pt1 = t_label[:, 1].reshape(data_t.shape[0], 1)
             ft1 = pt1 * reverse_feature_t
             out_s1 = self.domain_discriminator1(fs1)
             domain_s.append(out_s1)
             out_t1 = self.domain_discriminator1(ft1)
             domain_t.append(out_t1)
 
-            ps2 = pseudo_s_label[:, 2].reshape(data_s.shape[0], 1)
+            ps2 = s_label[:, 2].reshape(data_s.shape[0], 1)
             fs2 = ps2 * reverse_feature_s
-            pt2 = pseudo_t_label[:, 2].reshape(data_t.shape[0], 1)
+            pt2 = t_label[:, 2].reshape(data_t.shape[0], 1)
             ft2 = pt2 * reverse_feature_t
             out_s2 = self.domain_discriminator2(fs2)
             domain_s.append(out_s2)
