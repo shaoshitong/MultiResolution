@@ -47,9 +47,8 @@ def test(myNet, test_data_loader):
 def train(myNet, source_loader, target_loader):
     length = len(source_loader)
     torch.cuda.manual_seed(100)
-    lr = 0.001
+    lr = 0.003
     learning_rate = lr / math.pow(1 + 10 * (epoch-1) / args.nEpoch, 0.75)
-    optimizer = optim.SGD(myNet.parameters(), lr=learning_rate)
     myNet.train()
     correct = 0
     i = 0
@@ -165,10 +164,10 @@ if __name__ == '__main__':
         # construct dataset
         source = dataset.Mydataset(source_sample, source_elabel)
         target = dataset.Mydataset(target_sample, target_elabel)
-        source_loader = DataLoader(source, batch_size=16, shuffle=True, drop_last=True)
+        source_loader = DataLoader(source, batch_size=16, shuffle=True, drop_last=False)
         target_loader = DataLoader(target, batch_size=16, shuffle=True, drop_last=False)
         myNet = model_transferable_attention.OverallModel().cuda()
-
+        optimizer = optim.SGD(myNet.parameters(), lr=0.001, momentum=0.0)
         train_accuracy = []
         test_accuracy = []
         e_error = []

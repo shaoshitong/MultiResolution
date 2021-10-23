@@ -82,8 +82,9 @@ class AttentionLayer(nn.Module):
 class Feature_Get_Block(nn.Module):
     def __init__(self,in_channels,out_channels,stride=5,size=900):
         super(Feature_Get_Block, self).__init__()
+        print(stride)
         self.inf=nn.Sequential(*[
-            nn.Conv1d(in_channels, out_channels, kernel_size=(stride,), stride=(stride,)),
+            nn.Conv1d(in_channels, out_channels, kernel_size=(stride,), stride=(5,),padding=(stride-5)//2),
             nn.BatchNorm1d(out_channels),
             nn.GELU(),
         ])
@@ -93,16 +94,16 @@ class Feature_Get_Block(nn.Module):
             k=2
         else:
             k=1
-        self.selfattention=AttentionLayer(k,int(size//stride))
+        self.selfattention=AttentionLayer(k,int(size//5))
     def forward(self,x):
         return self.selfattention(self.inf(x))
 class MultiScaleBlock(nn.Module):
     def __init__(self, in_channels=62, out_channels=62,size=900,nums_parallel=4):
         super(MultiScaleBlock, self).__init__()
         self.block = nn.ModuleList([
-            Feature_Get_Block(in_channels,out_channels,stride=5*(i+1),size=size) for i in range(nums_parallel)
+            Feature_Get_Block(in_channels,out_channels,stride=5*(2*i+1),size=size) for i in range(nums_parallel)
         ])
-        self.out_size=sum([int(size//(5*(i+1))) for i in range(nums_parallel)])
+        self.out_size=sum([int(size//(5)) for i in range(nums_parallel)])
     def forward(self, x):
         result=[]
         for layer in self.block:
@@ -140,15 +141,16 @@ class MultiScaleBlockLayer(nn.Module):
             A=MultiScaleBlock(in_channels,in_channels,size)
             self.model.append(A)
             self.turn_model.append(ResNetBlock(in_channels,in_channels,1))
-        self.out_size=A.out_size*nums_layer
+        self.out_size=A.out_size
 
     def forward(self,x):
         p=[]
+        k=1
         for layer,turn in zip(self.model,self.turn_model):
-            m=layer(x)
+            m=layer(x/(2**k))
             p.append(m)
             x=turn(x)
-        return torch.cat(p,dim=2)
+        return torch.cat(p,dim=1)
 '''
 class ResBlock(nn.Module):
     def __init__(self, in_channels, hid_channels, out_channels):
@@ -177,8 +179,8 @@ class ResBlock(nn.Module):
 class FeatureExtraction(nn.Module):
     def __init__(self):
         super(FeatureExtraction, self).__init__()
-        self.multiScaleBlock =MultiScaleBlockLayer(62,900,nums_layer=4)
-        self.global_attention = AttentionLayer(4, self.multiScaleBlock.out_size)
+        self.multiScaleBlock =MultiScaleBlockLayer(62,900,nums_layer=1)
+        self.global_attention = AttentionLayer(5, self.multiScaleBlock.out_size)
         self.out_size=self.multiScaleBlock.out_size
     def forward(self, x):
         x_out = self.multiScaleBlock(x)
@@ -191,8 +193,9 @@ class OverallModel(nn.Module):
         super(OverallModel, self).__init__()
         self.feature_extraction = FeatureExtraction()
         # bottleneck layer
+        print(62*self.feature_extraction.out_size)
         self.bottleneck_layer = nn.Sequential(
-                                                nn.Linear( 62*self.feature_extraction.out_size, 2048),
+                                                nn.Linear( 62*self.feature_extraction.out_size,2048),
                                               nn.ReLU(),
                                               nn.Dropout(),
                                               nn.Linear(2048, 512),
