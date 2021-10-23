@@ -78,49 +78,57 @@ class AttentionLayer(nn.Module):
         x = self.self_attn(x, x, x)
         return x
 
+
 class Feature_Get_Block(nn.Module):
-    def __init__(self,in_channels,out_channels,stride=5,size=900):
+    def __init__(self,in_channels, out_channels, stride=5, size=900):
         super(Feature_Get_Block, self).__init__()
-        self.inf=nn.Sequential(*[
-            nn.Conv1d(in_channels, out_channels, kernel_size=(stride,), stride=(5,),padding=(stride-5)//2),
+        self.inf = nn.Sequential(*[
+            nn.Conv1d(in_channels, out_channels, kernel_size=(stride,), stride=(5,), padding=(stride-5)//2),
             nn.BatchNorm1d(out_channels),
             nn.GELU(),
         ])
-        if int(size//stride)%3==0:
-            k=3
-        elif int(size//stride)%2==0:
-            k=2
+        if int(size//stride) % 3 == 0:
+            k = 3
+        elif int(size//stride) % 2 == 0:
+            k = 2
         else:
-            k=1
-        self.selfattention=AttentionLayer(k,int(size//5))
-    def forward(self,x):
+            k = 1
+        self.selfattention=AttentionLayer(k, int(size//5))
+
+    def forward(self, x):
         return self.selfattention(self.inf(x))
+
+
 class MultiScaleBlock(nn.Module):
-    def __init__(self, in_channels=62, out_channels=62,size=900,nums_parallel=4):
+    def __init__(self, in_channels=62, out_channels=62, size=900, nums_parallel=4):
         super(MultiScaleBlock, self).__init__()
         self.block = nn.ModuleList([
-            Feature_Get_Block(in_channels,out_channels,stride=5*(2*i+1),size=size) for i in range(nums_parallel)
+            Feature_Get_Block(in_channels, out_channels, stride=5*(2*i+1),size=size) for i in range(nums_parallel)
         ])
-        self.out_size=sum([int(size//(5)) for i in range(nums_parallel)])
+        self.out_size = sum([int(size//(5)) for i in range(nums_parallel)])
+
     def forward(self, x):
-        result=[]
+        result = []
         for layer in self.block:
             result.append(layer(x))
         x_cat = torch.cat(result, dim=2)
         return x_cat
+
+
 class ResNetBlock(nn.Module):
-    def __init__(self,in_planes,planes,stride,dropout=0.1):
+    def __init__(self, in_planes, planes, stride, dropout=0.1):
         super(ResNetBlock,self).__init__()
-        self.res=nn.Sequential(*[
-            nn.Conv1d(in_planes,planes,(3,),(stride),(1,),bias=False),
+        self.res = nn.Sequential(*[
+            nn.Conv1d(in_planes, planes, (3,), (stride), (1,), bias=False),
             nn.ReLU(inplace=True),
             nn.BatchNorm1d(planes),
-            nn.Conv1d(planes, planes, (3,), (1,),(1,) ,bias=False),
+            nn.Conv1d(planes, planes, (3,), (1,), (1,), bias=False),
             nn.ReLU(inplace=True),
             nn.Dropout(p=dropout),
             nn.BatchNorm1d(planes),
         ])
         self._initialize()
+
     def _initialize(self):
         for layer in self.modules():
             if isinstance(layer,nn.Conv1d):
@@ -129,59 +137,59 @@ class ResNetBlock(nn.Module):
                 nn.init.ones_(layer.weight.data)
                 nn.init.zeros_(layer.weight.data)
 
-
-    def forward(self,x):
+    def forward(self, x):
         return x+self.res(x)
 
 
 class MultiScaleBlockLayer(nn.Module):
-    def __init__(self,in_channels,size=900, nums_layer=1):
+    def __init__(self, in_channels,size=900, nums_layer=1):
         super(MultiScaleBlockLayer,self).__init__()
-        self.model=nn.ModuleList([])
-        self.turn_model=nn.ModuleList([])
-        self.attention=nn.ModuleList([])
+        self.model = nn.ModuleList([])
+        self.turn_model = nn.ModuleList([])
+        self.attention = nn.ModuleList([])
         for i in range(nums_layer):
-            A=MultiScaleBlock(in_channels,in_channels,size)
+            A = MultiScaleBlock(in_channels,in_channels,size)
             self.model.append(A)
             self.attention.append(nn.Sequential(*[
-                nn.Conv1d(in_channels,1,(1,),(1,),bias=False),
+                nn.Conv1d(in_channels, 1, (1,), (1,), bias=False),
                 nn.Flatten(),
                 nn.Linear(A.out_size,1),
             ]))
             self.turn_model.append(ResNetBlock(in_channels,in_channels,1))
-        self.out_size=A.out_size
+        self.out_size = A.out_size
 
     def forward(self,x):
-        p=[]
-        attn=[]
-        k=0
-        for layer,turn,att in zip(self.model,self.turn_model,self.attention):
-            m=layer(x/(2**k))
+        p = []
+        attn = []
+        k = 0
+        for layer, turn, att in zip(self.model, self.turn_model, self.attention):
+            m = layer(x/(2**k))
             attn.append(att(m))
             p.append(m)
-            k+=1
-            x=turn(x)
+            k += 1
+            x = turn(x)
 
         p = torch.stack(p, dim=0)
         attn = torch.stack(attn, dim=0).unsqueeze(-1)
         attn = torch.softmax(attn, dim=0)
-        attn2 = 0.
+        attn2 = torch.Tensor([0.]).cuda()
         for i in range(attn.shape[0]-1):
-            attn2+=torch.exp(-attn[i,...]+attn[i+1,...]).sum()/attn[i,...].numel()
-        p=torch.sum(p*attn,dim=0)
-        return p,attn2
+            attn2 += torch.exp(-attn[i,...]+attn[i+1,...]).sum()/attn[i,...].numel()
+        p = torch.sum(p*attn,dim=0)
+        return p, attn2
 
 
 class FeatureExtraction(nn.Module):
     def __init__(self):
         super(FeatureExtraction, self).__init__()
-        self.multiScaleBlock =MultiScaleBlockLayer(62,900,nums_layer=2)
-        self.global_attention = AttentionLayer(10, self.multiScaleBlock.out_size)
-        self.out_size=self.multiScaleBlock.out_size
+        self.multiScaleBlock = MultiScaleBlockLayer(62, 900, nums_layer=1)
+        self.global_attention = AttentionLayer(5, self.multiScaleBlock.out_size)
+        self.out_size = self.multiScaleBlock.out_size
+
     def forward(self, x):
-        x_out,loss_attn = self.multiScaleBlock(x)
+        x_out, loss_attn = self.multiScaleBlock(x)
         x_output = self.global_attention(x_out)
-        return x_output,loss_attn
+        return x_output, loss_attn
 
 
 class OverallModel(nn.Module):
@@ -207,11 +215,11 @@ class OverallModel(nn.Module):
 
     def forward(self, data_s, data_t, alpha):
         # feature extraction
-        losses=0.
-        feature_s,loss_attn = self.feature_extraction(data_s)
-        losses=loss_attn+losses
+        losses = 0.
+        feature_s, loss_attn = self.feature_extraction(data_s)
+        losses = loss_attn+losses
         feature_s_reshape = feature_s.reshape(data_s.size(0), -1)
-        feature_t,loss_attn = self.feature_extraction(data_t)
+        feature_t, loss_attn = self.feature_extraction(data_t)
         losses = loss_attn + losses
         feature_t_reshape = feature_t.reshape(data_t.size(0), -1)
 
@@ -239,7 +247,7 @@ class OverallModel(nn.Module):
                 )
         else:
             pass
-        return s_label_out, local_domain_s, local_domain_t, bottle_feature_s_reshape, bottle_feature_t_reshape,losses
+        return s_label_out, local_domain_s, local_domain_t, bottle_feature_s_reshape, bottle_feature_t_reshape, losses
 
 
 '''

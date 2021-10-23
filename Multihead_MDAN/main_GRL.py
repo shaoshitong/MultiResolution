@@ -1,4 +1,5 @@
 from MultiResolution.Multihead_MDAN import model_transferable_attention
+from MultiResolution.Multihead_MDAN.sam import SAM
 import torch
 import torch.optim as optim
 import tqdm
@@ -23,7 +24,7 @@ segment7:数据处理方式为moving average; 数据形式(45, 310, 180),对(45,
 
 parser = argparse.ArgumentParser()  # 创建对象
 parser.add_argument('--cuda', type=int, default=0)
-parser.add_argument('--nEpoch', type=int, default=40)
+parser.add_argument('--nEpoch', type=int, default=60)
 
 # parse_args()将之前add_argument()定义的参数进行赋值，并返回相关的设置
 args = parser.parse_args()
@@ -70,60 +71,47 @@ def train(myNet, source_loader, target_loader):
         for target_data, target_label in target_loader:
             data_t, label_t_e = target_data.cuda(), target_label.cuda()
             break
-        label_s_d = torch.zeros(data_s.size(0))
-        label_t_d = torch.ones(data_t.size(0))
         # use the model to train
         out = myNet(data_s, data_t, alpha)
         s_pred = out[0]
-        local_domain_s = out[1]
-        local_domain_t = out[2]
-        bottle_feature_s_reshape = out[3]
-        bottle_feature_t_reshape = out[4]
         label_s_e = label_s_e.long()
-        label_s_d = label_s_d.long()
-        label_t_d = label_t_d.long()
         # definite the loss function
         criteon = nn.CrossEntropyLoss()
         loss_weight = [1, 0.01, 0.001]
         # Batch spectral penalization loss
-        _, s_s, _ = torch.linalg.svd(bottle_feature_s_reshape, full_matrices=False)
-        _, s_t, _ = torch.linalg.svd(bottle_feature_t_reshape, full_matrices=False)
-        sigma = torch.pow(s_s[0], 2) + torch.pow(s_t[0], 2)
         # print(s_s,s_t)
         # class loss
         loss_e = smooth_crossentropy(s_pred.cuda(), label_s_e.cuda())
         # local domain loss
-        loss_s = 0
-        loss_t = 0
-        for j in range(3):
-            loss_si = criteon(local_domain_s[j].cuda(), label_s_d.cuda())
-            loss_ti = criteon(local_domain_t[j].cuda(), label_t_d.cuda())
-            loss_s += loss_si
-            loss_t += loss_ti
-        loss_d = loss_s
         # total loss
         loss_total = loss_weight[0] * loss_e +out[-1] # + loss_weight[1] * loss_d + loss_weight[2] * sigma
         loss_total.backward()
-        optimizer.step()
+        optimizer.first_step(zero_grad=True)
+        out=myNet(data_s, data_t, alpha)
+        s_pred = out[0]
+        loss_e = smooth_crossentropy(s_pred.cuda(), label_s_e.cuda())
+        loss_total = loss_weight[0] * loss_e +out[-1] # + loss_weight[1] * loss_d + loss_weight[2] * sigma
+        # model.subWeightGrad(epoch, yaml['parameters']['epoch'], .5)
+        loss_total.backward()
+        optimizer.second_step(zero_grad=False)
         i += 1
         e_output = torch.argmax(s_pred, dim=1)
         # classification accuracy
         correct += torch.eq(e_output, label_s_e).float().sum().item()
+    scheduler.step()
     train_acc = correct / (len(source_loader.dataset)) * 100
     train_acc1 = round(train_acc, 2)
     train_accuracy.append(train_acc1)
+    d_error.append(out[-1].item())
     item_pr = 'Train Epoch: [{}/{}], emotion_loss: {:.2f},att_loss:{:.2f} ' \
-              'domain loss: {:.2f}, sigma loss:{:.2f},total_loss: {:.2f}, epoch{}_Acc: {:.2f}' \
-        .format(epoch, args.nEpoch, loss_e.item(),out[-1].item(), loss_d.item(), sigma.item(), loss_total.item(), epoch, train_acc)
+              ',total_loss: {:.2f}, epoch{}_Acc: {:.2f}' \
+        .format(epoch, args.nEpoch, loss_e.item(),out[-1].item(),loss_total.item(), epoch, train_acc)
     print(item_pr)
 
     # collect data
     err_e1 = loss_e.item()
     error_e = round(err_e1, 2)
     e_error.append(error_e)
-    err_d1 = loss_d.item()
-    error_d = round(err_d1, 2)
-    d_error.append(error_d)
 
 
 if __name__ == '__main__':
@@ -175,7 +163,9 @@ if __name__ == '__main__':
         source_loader = DataLoader(source, batch_size=16, shuffle=True, drop_last=False)
         target_loader = DataLoader(target, batch_size=16, shuffle=True, drop_last=False)
         myNet = model_transferable_attention.OverallModel().cuda()
-        optimizer = optim.SGD(myNet.parameters(), lr=0.001, momentum=0.0)
+        optimizer=SAM(myNet.parameters(),optim.SGD, lr=0.001, momentum=0.0)
+        scheduler=optim.lr_scheduler.MultiStepLR(optimizer,[45],gamma=0.1)
+        # optimizer = optim.SGD(myNet.parameters(), lr=0.001, momentum=0.0)
         train_accuracy = []
         test_accuracy = []
         e_error = []
