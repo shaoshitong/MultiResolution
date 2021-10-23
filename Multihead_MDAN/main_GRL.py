@@ -8,6 +8,7 @@ from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 import torch.nn as nn
 import numpy as np
+import torch.nn.functional as F
 import math
 """
 SEED数据集模型
@@ -22,12 +23,19 @@ segment7:数据处理方式为moving average; 数据形式(45, 310, 180),对(45,
 
 parser = argparse.ArgumentParser()  # 创建对象
 parser.add_argument('--cuda', type=int, default=0)
-parser.add_argument('--nEpoch', type=int, default=100)
+parser.add_argument('--nEpoch', type=int, default=40)
 
 # parse_args()将之前add_argument()定义的参数进行赋值，并返回相关的设置
 args = parser.parse_args()
 # 选择运算设备
 
+
+def smooth_crossentropy(pred, gold, smoothing=0.0):
+    n_class = pred.size(1)
+    one_hot = torch.full_like(pred, fill_value=smoothing / (n_class - 1))
+    one_hot.scatter_(dim=1, index=gold.unsqueeze(1), value=1.0 - smoothing)
+    log_prob = F.log_softmax(pred, dim=1)
+    return F.kl_div(input=log_prob, target=one_hot, reduction='none').sum(-1).mean()
 
 def test(myNet, test_data_loader):
     alpha = 0
@@ -83,7 +91,7 @@ def train(myNet, source_loader, target_loader):
         sigma = torch.pow(s_s[0], 2) + torch.pow(s_t[0], 2)
         # print(s_s,s_t)
         # class loss
-        loss_e = criteon(s_pred.cuda(), label_s_e.cuda())
+        loss_e = smooth_crossentropy(s_pred.cuda(), label_s_e.cuda())
         # local domain loss
         loss_s = 0
         loss_t = 0
@@ -92,9 +100,9 @@ def train(myNet, source_loader, target_loader):
             loss_ti = criteon(local_domain_t[j].cuda(), label_t_d.cuda())
             loss_s += loss_si
             loss_t += loss_ti
-        loss_d = loss_s + loss_t
+        loss_d = loss_s
         # total loss
-        loss_total = loss_weight[0] * loss_e + loss_weight[1] * loss_d + loss_weight[2] * sigma
+        loss_total = loss_weight[0] * loss_e +out[-1] # + loss_weight[1] * loss_d + loss_weight[2] * sigma
         loss_total.backward()
         optimizer.step()
         i += 1
@@ -104,9 +112,9 @@ def train(myNet, source_loader, target_loader):
     train_acc = correct / (len(source_loader.dataset)) * 100
     train_acc1 = round(train_acc, 2)
     train_accuracy.append(train_acc1)
-    item_pr = 'Train Epoch: [{}/{}], emotion_loss: {:.2f}, ' \
+    item_pr = 'Train Epoch: [{}/{}], emotion_loss: {:.2f},att_loss:{:.2f} ' \
               'domain loss: {:.2f}, sigma loss:{:.2f},total_loss: {:.2f}, epoch{}_Acc: {:.2f}' \
-        .format(epoch, args.nEpoch, loss_e.item(), loss_d.item(), sigma.item(), loss_total.item(), epoch, train_acc)
+        .format(epoch, args.nEpoch, loss_e.item(),out[-1].item(), loss_d.item(), sigma.item(), loss_total.item(), epoch, train_acc)
     print(item_pr)
 
     # collect data
@@ -211,5 +219,7 @@ if __name__ == '__main__':
         ax3.set_xlabel('epoch')
         ax3.set_ylabel('error_d')
         iter = torch.rand(1)
-        path = 'G:/Alex/SEED_experiment/results/multidomain_GRL/' + str(iter) + '.jpg'
+        import datetime,time
+        time_now= str(int(time.time()))
+        path = 'G:/Alex/SEED_experiment/results/multidomain_GRL/' + time_now +f"seed is {i}"+'.jpg'
         plt.savefig(path)
